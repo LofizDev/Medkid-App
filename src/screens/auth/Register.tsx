@@ -1,12 +1,152 @@
-import { View, Text } from 'react-native';
-import React from 'react';
+import React, { useState, useRef } from 'react';
+import { View, FlatList, StyleSheet, Dimensions, TouchableOpacity, Text } from 'react-native';
+import theme from '../../constants/theme';
+import SelectClub from '../../components/Joining-process/SelectClub';
+import Contact from '../../components/Joining-process/Contact';
+import Membership from '../../components/Joining-process/Membership';
+import Health from '../../components/Joining-process/Health';
+import Payment from '../../components/Joining-process/Payment';
 
-const Register = () => {
+interface PaginationTypes {
+    index: number;
+    onIndexChange: (index: number) => void;
+}
+interface Tab {
+    id: string;
+    component: JSX.Element;
+}
+
+// Tabs Joining Process
+const Tabs: Tab[] = [
+    { id: '1', component: <SelectClub /> },
+    { id: '2', component: <Contact /> },
+    { id: '3', component: <Membership /> },
+    { id: '4', component: <Health /> },
+    { id: '5', component: <Payment /> },
+];
+
+const { width } = Dimensions.get('window');
+
+// Custom Pagination Tab
+const Pagination = ({ index, onIndexChange }: PaginationTypes) => {
     return (
-        <View>
-            <Text>Register</Text>
+        <View style={styles.pagination}>
+            {Tabs.map((_, i) => {
+                return (
+                    <View key={i}>
+                        <TouchableOpacity
+                            style={[styles.dot, i == 0 ? styles.firstDot : null,
+                            index === i ? styles.activeDot : index > i ? styles.prevDot : styles.nextDot]}
+                            onPress={() => onIndexChange(i)}
+                        >
+                            <Text style={index > i ? styles.prevText : styles.nextText}>{index >= i && i + 1}</Text>
+                            {index !== i && <View style={styles.line} />}
+                        </TouchableOpacity>
+                        {i !== 0 && i !== 5 && (
+                            <Text style={[styles.linkDot, { top: index >= i ? 15.5 : 5.5 }]} />
+                        )}
+                    </View>
+                );
+            })}
         </View>
     );
 };
 
-export default Register
+
+const App = () => {
+    const [index, setIndex] = useState<number>(0);
+    const flatListRef = useRef<FlatList<Tab>>(null);
+    const onIndexChange = (index) => {
+        setIndex(index);
+        flatListRef.current.scrollToIndex({ index, animated: true });
+    };
+
+    return (
+        <View style={styles.container}>
+            <View style={[styles.lineProcress, { width: (index + 1) * 16.67 + '%' }]} />
+            <Pagination index={index} onIndexChange={onIndexChange} />
+            <FlatList
+                ref={flatListRef}
+                horizontal
+                data={Tabs}
+                keyExtractor={(item) => item.id}
+                renderItem={({ item }) => <View style={styles.item}>{item.component}</View>}
+                onScroll={(event) => {
+                    const offset = event.nativeEvent.contentOffset.x;
+                    const currentIndex = Math.round(offset / width);
+                    if (index !== currentIndex) {
+                        setIndex(currentIndex);
+                    }
+                }}
+                pagingEnabled
+                showsHorizontalScrollIndicator={false}
+            />
+        </View>
+    );
+};
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: theme.black,
+    },
+    item: {
+        width,
+    },
+    pagination: {
+        flexDirection: 'row',
+        height: 34,
+        marginTop: 14,
+        alignItems: 'center',
+    },
+    firstDot: {
+        marginLeft: 14,
+    },
+    dot: {
+        backgroundColor: '#ccc',
+        marginLeft: 24,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    linkDot: {
+        width: 24,
+        position: 'absolute',
+        left: 0,
+        height: 1,
+        backgroundColor: theme.green,
+    },
+    lineProcress: {
+        height: 6,
+        backgroundColor: theme.green,
+    },
+    activeDot: {
+        backgroundColor: theme.green,
+        color: theme.black,
+        height: 34,
+        width: 34,
+        borderRadius: 50,
+    },
+    prevDot: {
+        borderColor: theme.green,
+        height: 34,
+        color: theme.white,
+        width: 34,
+        borderWidth: 1,
+        backgroundColor: theme.black,
+        borderRadius: 50,
+    },
+    nextDot: {
+        height: 11,
+        width: 11,
+        borderRadius: 50,
+        backgroundColor: theme.green,
+    },
+    prevText: {
+        color: theme.white,
+    },
+    nextText: {
+        color: theme.black,
+    },
+});
+
+export default App
