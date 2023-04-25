@@ -36,7 +36,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -51,5 +51,24 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>ABCGravity-Compressed.otf</string>
+		<string>ABCGravity-CompressedItalic.otf</string>
+		<string>ABCMonumentGrotesk-Bold.otf</string>
+		<string>SVNGothamBook.otf</string>
+		<string>BebasNeue-Regular.ttf</string>
+		<string>CarneroBold.ttf</string>
+		<string>fa-solid-900.ttf</string>
+		<string>GothamBook.ttf</string>
+		<string>GothamMedium.ttf</string>
+		<string>GraphikLCG-Regular.ttf</string>
+		<string>GraphikLCG-RegularItalic.ttf</string>
+		<string>GraphikLCG-Semibold.ttf</string>
+		<string>GraphikLCG-SemiboldItalic.ttf</string>
+		<string>GTWalsheimPro-Bold.ttf</string>
+		<string>JostItalicVariableFont_wght.ttf</string>
+		<string>JostVariableFont_wght.ttf</string>
+	</array>
 </dict>
 </plist>

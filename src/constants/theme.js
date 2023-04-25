@@ -1,7 +1,7 @@
 export default {
-  primary: '#111111',
-  white: '#7d5ff',
-  gray: '#666666',
-  black: '#111111',
+  green: '#82FA00',
+  white: '#ffffff',
+  gray: '#414141',
+  black: '#000000',
   warning: '#f0d500s',
 };

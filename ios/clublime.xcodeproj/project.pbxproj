@@ -14,6 +14,29 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-clublime-clublimeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-clublime-clublimeTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		57268A9F59C848EF98A15710 /* ABCGravity-Compressed.otf in Resources */ = {isa = PBXBuildFile; fileRef = F9401EE288F4464588C8D35D /* ABCGravity-Compressed.otf */; };
+		4958DDAF7C0D43B79AB57FEF /* ABCGravity-CompressedItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 101905DC125941059E7E471F /* ABCGravity-CompressedItalic.otf */; };
+		4F7D311E7B2E46DDA4E6B372 /* ABCMonumentGrotesk-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7358B91FF481450586A742C3 /* ABCMonumentGrotesk-Bold.otf */; };
+		1E801E2BDC7D45289DF79D7C /* SVNGothamBook.otf in Resources */ = {isa = PBXBuildFile; fileRef = 73FFB5017B60414AAFF4392F /* SVNGothamBook.otf */; };
+		B6482A6F044C4CADBD7A0BD4 /* BebasNeue-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 348B799CDB2246D58D1B1219 /* BebasNeue-Regular.ttf */; };
+		BFE833AE39314BD2AC00A95F /* CarneroBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0431A7B6FACC4AAE8AFDB073 /* CarneroBold.ttf */; };
+		08DE3B55B57D420ABEFC7DEF /* fa-solid-900.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86AB48E4373146C98149CB2C /* fa-solid-900.ttf */; };
+		92476CB3F67941DBA216F0CD /* GothamBook.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF8EC7BFADB747C1BBB98EC2 /* GothamBook.ttf */; };
+		6B72E411DC614DD7BC755A40 /* GothamMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2D0515DA22449968F08C5C9 /* GothamMedium.ttf */; };
+		5023488607E7494D8DD3F918 /* GraphikLCG-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 29C11211FDFF44B6B60A7A77 /* GraphikLCG-Regular.ttf */; };
+		78DDF0960780474A90098E33 /* GraphikLCG-RegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DD00B2AB0404744BCC645BC /* GraphikLCG-RegularItalic.ttf */; };
+		23D46FCAC3634CC29BE0F2E5 /* GraphikLCG-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41196E6F63174584A91ECDF8 /* GraphikLCG-Semibold.ttf */; };
+		944C71C97D0F4507A18EACCF /* GraphikLCG-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C46229C9AC04DEFB079EAFB /* GraphikLCG-SemiboldItalic.ttf */; };
+		77866C73078047F98B6ADC75 /* GTWalsheimPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8F54BDAD7D8C407A8B14D637 /* GTWalsheimPro-Bold.ttf */; };
+		435F6ED6F69D47DC9683D468 /* JostItalicVariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9ECEBD4E70C6491EA6385CC8 /* JostItalicVariableFont_wght.ttf */; };
+		D143208B298944C1B63B1ACA /* JostVariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5E05DA492E7459EA3FA09A7 /* JostVariableFont_wght.ttf */; };
+		89E5DDFC4B3F43B7B7F759B8 /* ABCGravity-Compressed.woff in Resources */ = {isa = PBXBuildFile; fileRef = 1B182DD8D13C4E5983B4BB40 /* ABCGravity-Compressed.woff */; };
+		A483021AF20C48818144691C /* ABCGravity-Compressed.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = BB7308A55C784092930AAFCF /* ABCGravity-Compressed.woff2 */; };
+		2003C3D71DA1489C8304D868 /* ABCMonumentGrotesk-Bold.woff in Resources */ = {isa = PBXBuildFile; fileRef = 56A00ACE4C9B456FB4F8403B /* ABCMonumentGrotesk-Bold.woff */; };
+		A9E08D4B51214439A75FF95F /* Bossa-Bold.woff in Resources */ = {isa = PBXBuildFile; fileRef = CF7AEDA4F5554F93B941F284 /* Bossa-Bold.woff */; };
+		0AC00A43A82345788AA47BC1 /* fa-solid-900.eot in Resources */ = {isa = PBXBuildFile; fileRef = B381C6A2664248F381C0FD98 /* fa-solid-900.eot */; };
+		4682EF2D14114DD7BD169082 /* fa-solid-900.woff in Resources */ = {isa = PBXBuildFile; fileRef = 632B5DA807D74B66947A4763 /* fa-solid-900.woff */; };
+		E93D0791602540CA9CC7AFC3 /* fa-solid-900.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = B596B110CF564120BE0DFF3A /* fa-solid-900.woff2 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +67,29 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = clublime/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-clublime-clublimeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clublime-clublimeTests.release.xcconfig"; path = "Target Support Files/Pods-clublime-clublimeTests/Pods-clublime-clublimeTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F9401EE288F4464588C8D35D /* ABCGravity-Compressed.otf */ = {isa = PBXFileReference; name = "ABCGravity-Compressed.otf"; path = "../assets/fonts/ABCGravity-Compressed.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		101905DC125941059E7E471F /* ABCGravity-CompressedItalic.otf */ = {isa = PBXFileReference; name = "ABCGravity-CompressedItalic.otf"; path = "../assets/fonts/ABCGravity-CompressedItalic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7358B91FF481450586A742C3 /* ABCMonumentGrotesk-Bold.otf */ = {isa = PBXFileReference; name = "ABCMonumentGrotesk-Bold.otf"; path = "../assets/fonts/ABCMonumentGrotesk-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		73FFB5017B60414AAFF4392F /* SVNGothamBook.otf */ = {isa = PBXFileReference; name = "SVNGothamBook.otf"; path = "../assets/fonts/SVNGothamBook.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		348B799CDB2246D58D1B1219 /* BebasNeue-Regular.ttf */ = {isa = PBXFileReference; name = "BebasNeue-Regular.ttf"; path = "../assets/fonts/BebasNeue-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0431A7B6FACC4AAE8AFDB073 /* CarneroBold.ttf */ = {isa = PBXFileReference; name = "CarneroBold.ttf"; path = "../assets/fonts/CarneroBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		86AB48E4373146C98149CB2C /* fa-solid-900.ttf */ = {isa = PBXFileReference; name = "fa-solid-900.ttf"; path = "../assets/fonts/fa-solid-900.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BF8EC7BFADB747C1BBB98EC2 /* GothamBook.ttf */ = {isa = PBXFileReference; name = "GothamBook.ttf"; path = "../assets/fonts/GothamBook.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D2D0515DA22449968F08C5C9 /* GothamMedium.ttf */ = {isa = PBXFileReference; name = "GothamMedium.ttf"; path = "../assets/fonts/GothamMedium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		29C11211FDFF44B6B60A7A77 /* GraphikLCG-Regular.ttf */ = {isa = PBXFileReference; name = "GraphikLCG-Regular.ttf"; path = "../assets/fonts/GraphikLCG-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2DD00B2AB0404744BCC645BC /* GraphikLCG-RegularItalic.ttf */ = {isa = PBXFileReference; name = "GraphikLCG-RegularItalic.ttf"; path = "../assets/fonts/GraphikLCG-RegularItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		41196E6F63174584A91ECDF8 /* GraphikLCG-Semibold.ttf */ = {isa = PBXFileReference; name = "GraphikLCG-Semibold.ttf"; path = "../assets/fonts/GraphikLCG-Semibold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2C46229C9AC04DEFB079EAFB /* GraphikLCG-SemiboldItalic.ttf */ = {isa = PBXFileReference; name = "GraphikLCG-SemiboldItalic.ttf"; path = "../assets/fonts/GraphikLCG-SemiboldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8F54BDAD7D8C407A8B14D637 /* GTWalsheimPro-Bold.ttf */ = {isa = PBXFileReference; name = "GTWalsheimPro-Bold.ttf"; path = "../assets/fonts/GTWalsheimPro-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9ECEBD4E70C6491EA6385CC8 /* JostItalicVariableFont_wght.ttf */ = {isa = PBXFileReference; name = "JostItalicVariableFont_wght.ttf"; path = "../assets/fonts/JostItalicVariableFont_wght.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B5E05DA492E7459EA3FA09A7 /* JostVariableFont_wght.ttf */ = {isa = PBXFileReference; name = "JostVariableFont_wght.ttf"; path = "../assets/fonts/JostVariableFont_wght.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1B182DD8D13C4E5983B4BB40 /* ABCGravity-Compressed.woff */ = {isa = PBXFileReference; name = "ABCGravity-Compressed.woff"; path = "../assets/fonts/ABCGravity-Compressed.woff"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BB7308A55C784092930AAFCF /* ABCGravity-Compressed.woff2 */ = {isa = PBXFileReference; name = "ABCGravity-Compressed.woff2"; path = "../assets/fonts/ABCGravity-Compressed.woff2"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		56A00ACE4C9B456FB4F8403B /* ABCMonumentGrotesk-Bold.woff */ = {isa = PBXFileReference; name = "ABCMonumentGrotesk-Bold.woff"; path = "../assets/fonts/ABCMonumentGrotesk-Bold.woff"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CF7AEDA4F5554F93B941F284 /* Bossa-Bold.woff */ = {isa = PBXFileReference; name = "Bossa-Bold.woff"; path = "../assets/fonts/Bossa-Bold.woff"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B381C6A2664248F381C0FD98 /* fa-solid-900.eot */ = {isa = PBXFileReference; name = "fa-solid-900.eot"; path = "../assets/fonts/fa-solid-900.eot"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		632B5DA807D74B66947A4763 /* fa-solid-900.woff */ = {isa = PBXFileReference; name = "fa-solid-900.woff"; path = "../assets/fonts/fa-solid-900.woff"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B596B110CF564120BE0DFF3A /* fa-solid-900.woff2 */ = {isa = PBXFileReference; name = "fa-solid-900.woff2"; path = "../assets/fonts/fa-solid-900.woff2"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +168,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				6908F10FDBC44AC2862CED0E /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +194,37 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		6908F10FDBC44AC2862CED0E /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				F9401EE288F4464588C8D35D /* ABCGravity-Compressed.otf */,
+				101905DC125941059E7E471F /* ABCGravity-CompressedItalic.otf */,
+				7358B91FF481450586A742C3 /* ABCMonumentGrotesk-Bold.otf */,
+				73FFB5017B60414AAFF4392F /* SVNGothamBook.otf */,
+				348B799CDB2246D58D1B1219 /* BebasNeue-Regular.ttf */,
+				0431A7B6FACC4AAE8AFDB073 /* CarneroBold.ttf */,
+				86AB48E4373146C98149CB2C /* fa-solid-900.ttf */,
+				BF8EC7BFADB747C1BBB98EC2 /* GothamBook.ttf */,
+				D2D0515DA22449968F08C5C9 /* GothamMedium.ttf */,
+				29C11211FDFF44B6B60A7A77 /* GraphikLCG-Regular.ttf */,
+				2DD00B2AB0404744BCC645BC /* GraphikLCG-RegularItalic.ttf */,
+				41196E6F63174584A91ECDF8 /* GraphikLCG-Semibold.ttf */,
+				2C46229C9AC04DEFB079EAFB /* GraphikLCG-SemiboldItalic.ttf */,
+				8F54BDAD7D8C407A8B14D637 /* GTWalsheimPro-Bold.ttf */,
+				9ECEBD4E70C6491EA6385CC8 /* JostItalicVariableFont_wght.ttf */,
+				B5E05DA492E7459EA3FA09A7 /* JostVariableFont_wght.ttf */,
+				1B182DD8D13C4E5983B4BB40 /* ABCGravity-Compressed.woff */,
+				BB7308A55C784092930AAFCF /* ABCGravity-Compressed.woff2 */,
+				56A00ACE4C9B456FB4F8403B /* ABCMonumentGrotesk-Bold.woff */,
+				CF7AEDA4F5554F93B941F284 /* Bossa-Bold.woff */,
+				B381C6A2664248F381C0FD98 /* fa-solid-900.eot */,
+				632B5DA807D74B66947A4763 /* fa-solid-900.woff */,
+				B596B110CF564120BE0DFF3A /* fa-solid-900.woff2 */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -244,6 +322,29 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				57268A9F59C848EF98A15710 /* ABCGravity-Compressed.otf in Resources */,
+				4958DDAF7C0D43B79AB57FEF /* ABCGravity-CompressedItalic.otf in Resources */,
+				4F7D311E7B2E46DDA4E6B372 /* ABCMonumentGrotesk-Bold.otf in Resources */,
+				1E801E2BDC7D45289DF79D7C /* SVNGothamBook.otf in Resources */,
+				B6482A6F044C4CADBD7A0BD4 /* BebasNeue-Regular.ttf in Resources */,
+				BFE833AE39314BD2AC00A95F /* CarneroBold.ttf in Resources */,
+				08DE3B55B57D420ABEFC7DEF /* fa-solid-900.ttf in Resources */,
+				92476CB3F67941DBA216F0CD /* GothamBook.ttf in Resources */,
+				6B72E411DC614DD7BC755A40 /* GothamMedium.ttf in Resources */,
+				5023488607E7494D8DD3F918 /* GraphikLCG-Regular.ttf in Resources */,
+				78DDF0960780474A90098E33 /* GraphikLCG-RegularItalic.ttf in Resources */,
+				23D46FCAC3634CC29BE0F2E5 /* GraphikLCG-Semibold.ttf in Resources */,
+				944C71C97D0F4507A18EACCF /* GraphikLCG-SemiboldItalic.ttf in Resources */,
+				77866C73078047F98B6ADC75 /* GTWalsheimPro-Bold.ttf in Resources */,
+				435F6ED6F69D47DC9683D468 /* JostItalicVariableFont_wght.ttf in Resources */,
+				D143208B298944C1B63B1ACA /* JostVariableFont_wght.ttf in Resources */,
+				89E5DDFC4B3F43B7B7F759B8 /* ABCGravity-Compressed.woff in Resources */,
+				A483021AF20C48818144691C /* ABCGravity-Compressed.woff2 in Resources */,
+				2003C3D71DA1489C8304D868 /* ABCMonumentGrotesk-Bold.woff in Resources */,
+				A9E08D4B51214439A75FF95F /* Bossa-Bold.woff in Resources */,
+				0AC00A43A82345788AA47BC1 /* fa-solid-900.eot in Resources */,
+				4682EF2D14114DD7BD169082 /* fa-solid-900.woff in Resources */,
+				E93D0791602540CA9CC7AFC3 /* fa-solid-900.woff2 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
