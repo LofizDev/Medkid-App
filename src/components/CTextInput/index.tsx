@@ -133,6 +133,7 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 14,
     fontWeight: '400',
+    fontFamily: 'GothamBook',
   },
   inputWrap: {
     paddingVertical: 8,
@@ -146,11 +147,13 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '400',
     flex: 1,
+    fontFamily: 'GothamBook',
   },
   errTxt: {
     color: '#FF6900',
     fontSize: 14,
     fontWeight: '400',
+    fontFamily: 'GothamBook',
   },
   icShowPW: {
     height: 24,
