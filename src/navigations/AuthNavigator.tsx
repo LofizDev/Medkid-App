@@ -1,15 +1,16 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import Login from '../screens/auth/Login';
+import Register from '../screens/auth/Register';
+import ChangeLocation from '../components/Joining-process/ChangeLocation';
 
 const Stack = createStackNavigator();
-
-console.log('here', Stack);
 
 export default function AuthNavigator() {
     return (
         <Stack.Navigator>
-            <Stack.Screen name="Login" component={Login} />
+            <Stack.Screen name="register" options={{ title: false, headerMode: 'none' }} component={Register} />
+            <Stack.Screen name="changeLocation" options={{ title: false, headerMode: 'none' }} component={ChangeLocation} />
+
         </Stack.Navigator>
     )
 }
