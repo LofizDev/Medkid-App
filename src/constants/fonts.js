@@ -7,7 +7,6 @@ export default StyleSheet.create({
   },
   Heading2: {
     fontFamily: 'BebasNeue-Regular',
-    lineHeight: 27,
     fontSize: 30,
   },
   Heading3: {
