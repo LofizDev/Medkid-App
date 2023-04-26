@@ -14,7 +14,7 @@ export default function SelectClub() {
             <Image source={require('../../assets/images/braddon.png')} style={styles.image} />
             <Text style={[styles.textConfirmed, GlobalSyle.Heading3]}>Is this correct?</Text>
             <View style={styles.buttonToAction}>
-                <TouchableOpacity onPress={() => navigation.navigate('ChangeLocation')} style={styles.button}>
+                <TouchableOpacity onPress={() => navigation.navigate('changeLocation')} style={styles.button}>
                     <Text style={[styles.buttonText, GlobalSyle.button]}>NO</Text>
                 </TouchableOpacity>
                 <ButtonNavigate isRight text="YES" />

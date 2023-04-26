@@ -13,7 +13,7 @@ const ChangeLocation: React.FC = () => {
     return (
         <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
             <View style={styles.container}>
-                <TouchableOpacity onPress={() => navigation.navigate('Register')} style={styles.headerAction} >
+                <TouchableOpacity onPress={() => navigation.navigate('register')} style={styles.headerAction} >
                     <PrevIcon />
                     <Text style={[styles.header, GlobalStyle.gotham]}>Home Club</Text>
                 </TouchableOpacity>
