@@ -1,9 +1,11 @@
 import { StyleSheet, Text, View, Image, Button, TouchableOpacity } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import theme from '../../constants/theme';
 import GlobalSyle from '../../constants/fonts';
 import ButtonNavigate from '../buttons/ButtonNavigate';
+import { useNavigation } from '@react-navigation/native';
 export default function SelectClub() {
+    const navigation = useNavigation();
     return (
         <View style={styles.container}>
             <Text style={[styles.header, GlobalSyle.Heading3]}>We’re ​excited to have you join us and we’ll see you at the gym!​</Text>
@@ -12,7 +14,7 @@ export default function SelectClub() {
             <Image source={require('../../assets/images/braddon.png')} style={styles.image} />
             <Text style={[styles.textConfirmed, GlobalSyle.Heading3]}>Is this correct?</Text>
             <View style={styles.buttonToAction}>
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity onPress={() => navigation.navigate('ChangeLocation')} style={styles.button}>
                     <Text style={[styles.buttonText, GlobalSyle.button]}>NO</Text>
                 </TouchableOpacity>
                 <ButtonNavigate isRight text="YES" />

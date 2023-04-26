@@ -53,7 +53,7 @@ const Pagination = ({ index, onIndexChange }: PaginationTypes) => {
 };
 
 
-const App = () => {
+const Register = () => {
     const [index, setIndex] = useState<number>(0);
     const flatListRef = useRef<FlatList<Tab>>(null);
     const onIndexChange = (index) => {
@@ -149,4 +149,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default App
+export default Register
