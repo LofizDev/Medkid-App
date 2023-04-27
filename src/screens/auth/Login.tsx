@@ -1,12 +1,13 @@
-import { View, Text } from 'react-native';
+import {View} from 'react-native';
 import React from 'react';
+import CustomTextInput from '../../components/CTextInput';
 
 const Login = () => {
-    return (
-        <View>
-            <Text>Login</Text>
-        </View>
-    );
+  return (
+    <View style={{flex: 1, backgroundColor: '#292929'}}>
+      <CustomTextInput label={'Email address'} isValid />
+    </View>
+  );
 };
 
-export default Login
+export default Login;
