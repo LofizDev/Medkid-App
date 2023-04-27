@@ -10,7 +10,6 @@ export default function AuthNavigator() {
         <Stack.Navigator>
             <Stack.Screen name="register" options={{ title: false, headerMode: 'none' }} component={Register} />
             <Stack.Screen name="changeLocation" options={{ title: false, headerMode: 'none' }} component={ChangeLocation} />
-
         </Stack.Navigator>
-    )
+    );
 }

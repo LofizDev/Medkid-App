@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 import { View, FlatList, StyleSheet, Dimensions, TouchableOpacity, Text } from 'react-native';
 import theme from '../../constants/theme';
 import SelectClub from '../../components/Joining-process/SelectClub';
@@ -6,6 +6,8 @@ import Contact from '../../components/Joining-process/Contact';
 import Membership from '../../components/Joining-process/Membership';
 import Health from '../../components/Joining-process/Health';
 import Payment from '../../components/Joining-process/Payment';
+import YourMembership from '../../components/Joining-process/YourMembership';
+import { RegisterContext } from '../../context/RegisterContext';
 
 interface PaginationTypes {
     index: number;
@@ -54,17 +56,20 @@ const Pagination = ({ index, onIndexChange }: PaginationTypes) => {
 
 
 const Register = () => {
-    const [index, setIndex] = useState<number>(0);
-    const flatListRef = useRef<FlatList<Tab>>(null);
+    // Context
+    const currentTab = useContext(RegisterContext).currentTab;
+    const flatListRef = useContext(RegisterContext).flatListRef;
+    const setCurrentTab = useContext(RegisterContext).setCurrentTab;
+
     const onIndexChange = (index) => {
-        setIndex(index);
+        setCurrentTab(index);
         flatListRef.current.scrollToIndex({ index, animated: true });
     };
 
     return (
         <View style={styles.container}>
-            <View style={[styles.lineProcress, { width: (index + 1) * 16.67 + '%' }]} />
-            <Pagination index={index} onIndexChange={onIndexChange} />
+            <View style={[styles.lineProcress, { width: (currentTab + 1) * 16.67 + '%' }]} />
+            <Pagination index={currentTab} onIndexChange={onIndexChange} />
             <FlatList
                 ref={flatListRef}
                 horizontal
@@ -74,13 +79,16 @@ const Register = () => {
                 onScroll={(event) => {
                     const offset = event.nativeEvent.contentOffset.x;
                     const currentIndex = Math.round(offset / width);
-                    if (index !== currentIndex) {
-                        setIndex(currentIndex);
+                    if (currentTab !== currentIndex) {
+                        setCurrentTab(currentIndex);
                     }
                 }}
                 pagingEnabled
                 showsHorizontalScrollIndicator={false}
             />
+            {/* Your membership */}
+            {currentTab !== 0 && currentTab !== 1 && <YourMembership />}
+
         </View>
     );
 };
