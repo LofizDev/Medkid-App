@@ -5,19 +5,23 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import ArrowDown from '../../assets/icons/ArrowDown';
 import Svg, { Path } from 'react-native-svg';
 import ArrowUp from '../../assets/icons/ArrownUp';
-const SinglePlan = () => {
+const SinglePlan = (props) => {
+    const { item } = props;
     const [open, setOpen] = useState<boolean>(false);
     return (
         <View style={styles.plan}>
             <View style={styles.planHeaderAction}>
-                <Text style={[styles.planTitle, GlobalStyle.gotham]}>Single</Text>
+                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                    <Text style={[styles.planTitle, GlobalStyle.gotham]}>{item.title}</Text>
+                    {item.popular && <Text style={styles.popular}>popular</Text>}
+                </View>
                 <TouchableOpacity onPress={() => setOpen(!open)}>
                     {!open ? <ArrowDown /> : <ArrowUp />}
                 </TouchableOpacity>
             </View>
             <View style={styles.planPrice}>
                 <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
-                    <Text style={[styles.price]}>$13</Text>
+                    <Text style={[styles.price]}>${item.price}</Text>
                     <Text style={[styles.perWeek, GlobalStyle.Heading3]}>.90 /week</Text>
                 </View>
                 <TouchableOpacity>
@@ -30,30 +34,16 @@ const SinglePlan = () => {
             {open && (
                 <View style={styles.content}>
                     <View style={styles.features}>
-                        <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 14 }}>
-                            <View style={styles.tickIcon}>
-                                <Svg xmlns="http://www.w3.org/2000/svg" width="12" height="9" viewBox="0 0 12 9" fill="none">
-                                    <Path d="M1.17188 3.6423L4.82422 7.29465L11.6072 0.511719" stroke="#82FA00" />
-                                </Svg>
+                        {item.access.map((i, idx) => (
+                            <View key={idx} style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 14 }}>
+                                <View style={styles.tickIcon}>
+                                    <Svg xmlns="http://www.w3.org/2000/svg" width="12" height="9" viewBox="0 0 12 9" fill="none">
+                                        <Path d="M1.17188 3.6423L4.82422 7.29465L11.6072 0.511719" stroke="#82FA00" />
+                                    </Svg>
+                                </View>
+                                <Text style={[styles.access, GlobalStyle.gotham]}>{i}</Text>
                             </View>
-                            <Text style={[styles.access, GlobalStyle.gotham]}>24/7 access*</Text>
-                        </View>
-                        <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 14 }}>
-                            <View style={styles.tickIcon}>
-                                <Svg xmlns="http://www.w3.org/2000/svg" width="12" height="9" viewBox="0 0 12 9" fill="none">
-                                    <Path d="M1.17188 3.6423L4.82422 7.29465L11.6072 0.511719" stroke="#82FA00" />
-                                </Svg>
-                            </View>
-                            <Text style={styles.access}>24/7 access*</Text>
-                        </View>
-                        <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 14 }}>
-                            <View style={styles.tickIcon}>
-                                <Svg xmlns="http://www.w3.org/2000/svg" width="12" height="9" viewBox="0 0 12 9" fill="none">
-                                    <Path d="M1.17188 3.6423L4.82422 7.29465L11.6072 0.511719" stroke="#82FA00" />
-                                </Svg>
-                            </View>
-                            <Text style={styles.access}>24/7 access*</Text>
-                        </View>
+                        ))}
                     </View>
                     <Text style={styles.subject}>*Subject to terms and conditions</Text>
                 </View>
@@ -135,5 +125,19 @@ const styles = StyleSheet.create({
         marginTop: 9,
         color: theme.white,
         opacity: 0.5,
+    },
+    popular: {
+        width: 54,
+        backgroundColor: theme.green,
+        height: 16,
+        marginLeft: 11,
+        fontSize: 7,
+        fontWeight: 800,
+        justifyContent: 'center',
+        textAlign: 'center',
+        borderRadius: 71,
+        textTransform: 'uppercase',
+        letterSpacing: 1.4,
+        paddingTop: 3,
     }
 })

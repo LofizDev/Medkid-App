@@ -9,10 +9,11 @@ import Checkbox from '../buttons/Checkbox';
 import ButtonNavigate from '../buttons/ButtonNavigate';
 import ArrowUp from '../../assets/icons/ArrownUp';
 import SingleUpgrade from './SingleUpgrade';
+import { memberships, upgrades } from '../../../mock/membership';
 const Membership: React.FC = () => {
     const navigation = useNavigation();
     const [isShowUpgrades, setIsShowUpgrades] = useState<boolean>(false);
-    const [tabs, setTabs] = useState({ list: ['weekly', 'annual', 'fixed term'], active: '' });
+    const [tabs, setTabs] = useState({ list: ['weekly', 'annual', 'fixed term'], active: 'weekly' });
 
     return (
         <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
@@ -38,9 +39,9 @@ const Membership: React.FC = () => {
                 </View>
                 {/* Membership Plans */}
                 <View style={styles.plans}>
-                    <SinglePlan />
-                    <SinglePlan />
-                    <SinglePlan />
+                    {memberships.filter(item => item.type === tabs.active).map((mem: object, idx: number) => (
+                        <SinglePlan key={idx} item={mem} />
+                    ))}
                 </View>
                 {/* Student rate */}
                 <View style={styles.studenBox}>
@@ -54,7 +55,10 @@ const Membership: React.FC = () => {
                         {!isShowUpgrades ? <ArrowDown /> : <ArrowUp />}
                     </View>
                 </TouchableHighlight>
-                <SingleUpgrade />
+                {/* Upgrated */}
+                {isShowUpgrades && upgrades.map((i: object, idx: number) => (
+                    <SingleUpgrade key={idx} item={i} />
+                ))}
                 {/* Button To Action */}
                 <View style={styles.buttonToAction}>
                     <ButtonNavigate isRight={false} />
