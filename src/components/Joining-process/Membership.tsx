@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { theme } from '../../constants';
 import GlobalStyle from '../../constants/fonts';
 import { useNavigation } from '@react-navigation/native';
-import { StyleSheet, Text, View, TextInput, Image, ScrollView, TouchableOpacity, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, TouchableHighlight } from 'react-native';
 import ArrowDown from '../../assets/icons/ArrowDown';
 import SinglePlan from './SinglePlan';
 import Checkbox from '../buttons/Checkbox';
@@ -63,7 +63,6 @@ const Membership: React.FC = () => {
                 <View style={styles.buttonToAction}>
                     <ButtonNavigate isRight={false} />
                     <ButtonNavigate isRight={true} text='NEXT' />
-
                 </View>
             </View>
         </ScrollView>
@@ -168,6 +167,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         marginTop: 34,
-        marginBottom: 50,
+        paddingBottom: 120,
     },
 })
