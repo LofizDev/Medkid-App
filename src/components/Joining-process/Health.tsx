@@ -4,8 +4,16 @@ import { theme } from '../../constants';
 import GlobalStyle from '../../constants/fonts';
 import SelectBox from '../buttons/SelectBox';
 import ButtonNavigate from '../buttons/ButtonNavigate';
+import CustomTextInput from '../../components/CTextInput';
 const Health = () => {
     const [accepted, setAccepted] = useState({ list: ['yes', 'no'], active: 'yes' });
+
+    const [contact, setContact] = useState({ emergencyContact: '', relation: '', emergencyPhone: '' });
+
+    const handleChange = (key: string, value: string) => {
+        setContact(prevState => ({ ...prevState, [key]: value }));
+    };
+
     return (
         <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
             <View style={styles.container}>
@@ -34,6 +42,35 @@ const Health = () => {
                 )}
                 <View style={{ marginTop: 34, paddingBottom: 4, borderBottomWidth: 1, borderBottomColor: theme.green }}>
                     <Text style={[styles.title, GlobalStyle.Heading2]}>Emergency contact</Text>
+                </View>
+                <View style={{ marginTop: 20 }}>
+                    <View style={styles.input}>
+                        <CustomTextInput
+                            value={contact.emergencyContact}
+                            onChangeText={(value) => handleChange('emergencyContact', value)}
+                            placeholder="Emergency contact*"
+                            label={'Emergency contact*'}
+                            type="NORMAL"
+                        />
+                    </View>
+                    <View style={styles.input}>
+                        <CustomTextInput
+                            value={contact.relation}
+                            onChangeText={(value) => handleChange('relation', value)}
+                            placeholder="Relation to you*"
+                            label={'Relation to you*'}
+                            type="NORMAL"
+                        />
+                    </View>
+                    <View style={styles.input}>
+                        <CustomTextInput
+                            value={contact.emergencyPhone}
+                            onChangeText={(value) => handleChange('emergencyPhone', value)}
+                            placeholder="Emergency phone*"
+                            label={'Emergency phone*'}
+                            type="NORMAL"
+                        />
+                    </View>
                 </View>
                 {/* Button to actions */}
                 <View style={{ marginTop: 44, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -102,5 +139,8 @@ const styles = StyleSheet.create({
         width: 265,
         marginBottom: 10,
         color: '#808080',
-    }
+    },
+    input: {
+        marginTop: 22,
+    },
 })

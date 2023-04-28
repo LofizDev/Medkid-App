@@ -1,4 +1,4 @@
-import {View} from 'react-native';
+import { View } from 'react-native';
 import React from 'react';
 import CustomTextInput from '../../components/CTextInput';
 
@@ -9,7 +9,7 @@ const Login = () => {
     setInputValue(txt);
   };
   return (
-    <View style={{flex: 1, backgroundColor: '#292929'}}>
+    <View style={{ flex: 1, backgroundColor: '#292929' }}>
       <CustomTextInput
         value={inputValue}
         onChangeText={onChangeText}
