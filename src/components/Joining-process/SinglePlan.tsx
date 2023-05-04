@@ -5,7 +5,10 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import ArrowDown from '../../assets/icons/ArrowDown';
 import Svg, { Path } from 'react-native-svg';
 import ArrowUp from '../../assets/icons/ArrownUp';
-const SinglePlan = (props) => {
+interface Iprops {
+    item: any
+}
+const SinglePlan = (props: Iprops) => {
     const { item } = props;
     const [open, setOpen] = useState<boolean>(false);
     return (
@@ -34,7 +37,7 @@ const SinglePlan = (props) => {
             {open && (
                 <View style={styles.content}>
                     <View style={styles.features}>
-                        {item.access.map((i, idx) => (
+                        {item.access.map((i: string, idx: number) => (
                             <View key={idx} style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 14 }}>
                                 <View style={styles.tickIcon}>
                                     <Svg xmlns="http://www.w3.org/2000/svg" width="12" height="9" viewBox="0 0 12 9" fill="none">
@@ -52,7 +55,7 @@ const SinglePlan = (props) => {
     )
 }
 
-export default SinglePlan
+export default SinglePlan;
 
 const styles = StyleSheet.create({
     plans: {

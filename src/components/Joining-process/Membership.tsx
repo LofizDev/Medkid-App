@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { theme } from '../../constants';
 import GlobalStyle from '../../constants/fonts';
-import { useNavigation } from '@react-navigation/native';
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, TouchableHighlight } from 'react-native';
 import ArrowDown from '../../assets/icons/ArrowDown';
 import SinglePlan from './SinglePlan';
@@ -10,8 +9,10 @@ import ButtonNavigate from '../buttons/ButtonNavigate';
 import ArrowUp from '../../assets/icons/ArrownUp';
 import SingleUpgrade from './SingleUpgrade';
 import { memberships, upgrades } from '../../../mock/membership';
+import { RegisterContext } from '../../context/RegisterContext';
 const Membership: React.FC = () => {
-    const navigation = useNavigation();
+    const onIndexChange = useContext(RegisterContext).onIndexChange;
+
     const [isShowUpgrades, setIsShowUpgrades] = useState<boolean>(false);
     const [tabs, setTabs] = useState({ list: ['weekly', 'annual', 'fixed term'], active: 'weekly' });
 
@@ -61,8 +62,12 @@ const Membership: React.FC = () => {
                 ))}
                 {/* Button To Action */}
                 <View style={styles.buttonToAction}>
-                    <ButtonNavigate isRight={false} />
-                    <ButtonNavigate isRight={true} text='NEXT' />
+                    <TouchableHighlight onPress={() => onIndexChange(1)}>
+                        <ButtonNavigate isRight={false} text="" />
+                    </TouchableHighlight>
+                    <TouchableHighlight onPress={() => onIndexChange(3)}>
+                        <ButtonNavigate isRight={true} text="NEXT" />
+                    </TouchableHighlight>
                 </View>
             </View>
         </ScrollView>
@@ -112,7 +117,7 @@ const styles = StyleSheet.create({
         borderColor: theme.green,
     },
     textActive: {
-        color: theme.black
+        color: theme.black,
     },
     tabTitle: {
         color: theme.white,
@@ -123,7 +128,7 @@ const styles = StyleSheet.create({
     },
     tabFirst: {
         borderTopLeftRadius: 4,
-        borderBottomLeftRadius: 4
+        borderBottomLeftRadius: 4,
     },
     tabSecond: {
         borderLeftWidth: 0,

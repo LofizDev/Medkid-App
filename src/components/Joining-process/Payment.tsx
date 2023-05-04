@@ -1,19 +1,24 @@
 import { StyleSheet, Text, View, TouchableHighlight, ScrollView, TouchableOpacity } from 'react-native';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { theme } from '../../constants';
 import GlobalStyle from '../../constants/fonts';
 import Svg, { Path } from 'react-native-svg';
 import ButtonNavigate from '../buttons/ButtonNavigate';
 import CustomTextInput from '../../components/CTextInput';
+import { RegisterContext } from '../../context/RegisterContext';
 const Payment = () => {
+    const onIndexChange = useContext(RegisterContext).onIndexChange;
+
     const [isSameCardAbove, setIsSaveCardAbove] = useState<boolean>(false);
     const [accepted, setAccepted] = useState({ list: ['card', 'bank account'], active: 'card' });
 
     const [card, setCard] = useState({ cardNumber: '', nameOnCard: '', expiryDate: '', cvv: '' });
     const [bank, setBank] = useState({ nameOfAccount: '', bankName: '', bsb: '' });
 
+    const handleChange = (key: string, value: string) => {
+        setCard({ ...card, [key]: value });
+    };
 
-    const handleChange = (key, value) => { setContact(prevState => ({ ...prevState, [key]: value })); }
     return (
         <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
             <View style={styles.container}>
@@ -78,7 +83,7 @@ const Payment = () => {
                     ))}
                 </View>
                 {/* Acceptd with the prev Card */}
-                {accepted.active == 'card' && (
+                {accepted.active === 'card' && (
                     <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 25 }}>
                         <TouchableOpacity onPress={() => setIsSaveCardAbove(!isSameCardAbove)}>
                             <View style={isSameCardAbove ? styles.checkboxActive : styles.checkbox}>
@@ -168,9 +173,8 @@ const Payment = () => {
 
                 {/* Button to actions */}
                 <View style={{ marginTop: 44, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <ButtonNavigate isRight={false} />
-                    <ButtonNavigate isRight={true} text="PAY NOW" />
-
+                    <TouchableHighlight onPress={() => onIndexChange(3)}><ButtonNavigate isRight={false} text="" /></TouchableHighlight>
+                    <TouchableHighlight onPress={() => { }}><ButtonNavigate isRight={true} text="PAY NOW" /></TouchableHighlight>
                 </View>
             </View >
         </ScrollView>

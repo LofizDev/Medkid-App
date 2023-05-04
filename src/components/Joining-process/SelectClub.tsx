@@ -1,13 +1,15 @@
-import { StyleSheet, Text, View, Image, Button, TouchableOpacity } from 'react-native';
-import React, { useContext, useState } from 'react';
+import React, { useContext, memo } from 'react';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import theme from '../../constants/theme';
 import GlobalSyle from '../../constants/fonts';
 import ButtonNavigate from '../buttons/ButtonNavigate';
 import { useNavigation } from '@react-navigation/native';
 import { RegisterContext } from '../../context/RegisterContext';
-export default function SelectClub() {
+
+function SelectClub() {
     const navigation = useNavigation();
-    const setCurrentTab = useContext(RegisterContext).setCurrentTab;
+    const onIndexChange = useContext(RegisterContext).onIndexChange;
+
     return (
         <View style={styles.container}>
             <Text style={[styles.header, GlobalSyle.Heading3]}>We’re ​excited to have you join us and we’ll see you at the gym!​</Text>
@@ -19,13 +21,15 @@ export default function SelectClub() {
                 <TouchableOpacity onPress={() => navigation.navigate('changeLocation')} style={styles.button}>
                     <Text style={[styles.buttonText, GlobalSyle.button]}>NO</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => setCurrentTab(1)}>
+                <TouchableOpacity onPress={() => onIndexChange(1)}>
                     <ButtonNavigate isRight text="YES" />
                 </TouchableOpacity>
             </View>
         </View>
     );
 }
+
+export default memo(SelectClub);
 
 const styles = StyleSheet.create({
     container: {

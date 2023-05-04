@@ -77,7 +77,7 @@ const YourMembership = () => {
     );
 };
 
-export default YourMembership
+export default YourMembership;
 
 const styles = StyleSheet.create({
     wrapper: {

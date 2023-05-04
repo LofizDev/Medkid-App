@@ -14,8 +14,12 @@ const StoreProvider = ({ children }: iProps) => {
   const flatListRef = useRef<FlatList<Tab>>(null);
   const [currentTab, setCurrentTab] = useState<number>(0);
 
+  const onIndexChange = (index: number) => {
+    setCurrentTab(index);
+    flatListRef.current && flatListRef.current.scrollToIndex({ index, animated: true });
+  };
   return (
-    <RegisterContext.Provider value={{ currentTab, setCurrentTab, flatListRef }}>
+    <RegisterContext.Provider value={{ currentTab, setCurrentTab, flatListRef, onIndexChange }}>
       {children}
     </RegisterContext.Provider>
   );

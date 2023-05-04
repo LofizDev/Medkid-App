@@ -1,4 +1,4 @@
-import React, { useState, useRef, useContext } from 'react';
+import React, { useContext } from 'react';
 import { View, FlatList, StyleSheet, Dimensions, TouchableOpacity, Text } from 'react-native';
 import theme from '../../constants/theme';
 import SelectClub from '../../components/Joining-process/SelectClub';
@@ -37,9 +37,9 @@ const Pagination = ({ index, onIndexChange }: PaginationTypes) => {
                 return (
                     <View key={i}>
                         <TouchableOpacity
-                            style={[styles.dot, i == 0 ? styles.firstDot : null,
+                            style={[styles.dot, i === 0 ? styles.firstDot : null,
                             index === i ? styles.activeDot : index > i ? styles.prevDot : styles.nextDot]}
-                            onPress={() => onIndexChange(i)}
+                            onPress={() => index >= i && onIndexChange(i)}
                         >
                             <Text style={index > i ? styles.prevText : styles.nextText}>{index >= i && i + 1}</Text>
                             {index !== i && <View style={styles.line} />}
@@ -59,12 +59,8 @@ const Register = () => {
     // Context
     const currentTab = useContext(RegisterContext).currentTab;
     const flatListRef = useContext(RegisterContext).flatListRef;
-    const setCurrentTab = useContext(RegisterContext).setCurrentTab;
 
-    const onIndexChange = (index) => {
-        setCurrentTab(index);
-        flatListRef.current.scrollToIndex({ index, animated: true });
-    };
+    let onIndexChange = useContext(RegisterContext).onIndexChange;
 
     return (
         <View style={styles.container}>
@@ -76,14 +72,8 @@ const Register = () => {
                 data={Tabs}
                 keyExtractor={(item) => item.id}
                 renderItem={({ item }) => <View style={styles.item}>{item.component}</View>}
-                onScroll={(event) => {
-                    const offset = event.nativeEvent.contentOffset.x;
-                    const currentIndex = Math.round(offset / width);
-                    if (currentTab !== currentIndex) {
-                        setCurrentTab(currentIndex);
-                    }
-                }}
                 pagingEnabled
+                scrollEnabled={false}
                 showsHorizontalScrollIndicator={false}
             />
             {/* Your membership */}

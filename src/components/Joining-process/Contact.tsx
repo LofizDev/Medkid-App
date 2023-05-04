@@ -1,19 +1,18 @@
-import { StyleSheet, Text, View, TouchableHighlight, ScrollView, TouchableOpacity } from 'react-native';
-import React, { useState } from 'react';
+import { StyleSheet, Text, View, ScrollView, TouchableHighlight } from 'react-native';
+import React, { useState, memo, useContext } from 'react';
 import { theme } from '../../constants';
 import GlobalStyle from '../../constants/fonts';
-import Svg, { Path } from 'react-native-svg';
 import ButtonNavigate from '../buttons/ButtonNavigate';
 import CustomTextInput from '../../components/CTextInput';
+import { RegisterContext } from '../../context/RegisterContext';
 const Contact = () => {
-    const [isSameCardAbove, setIsSaveCardAbove] = useState<boolean>(false);
-    const [accepted, setAccepted] = useState({ list: ['card', 'bank account'], active: 'card' });
-
+    const onIndexChange = useContext(RegisterContext).onIndexChange;
     const [contactInfo, setContactInfo] = useState({ firstName: '', lastName: '', email: '', phone: '', searchYourAddress: '' });
-    const [bank, setBank] = useState({ nameOfAccount: '', bankName: '', bsb: '' });
 
+    const handleChange = (key: string, value: string) => {
+        setContactInfo({ ...contactInfo, [key]: value });
+    };
 
-    const handleChange = (key, value) => { setContact(prevState => ({ ...prevState, [key]: value })); }
     return (
         <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
             <View style={styles.container}>
@@ -70,8 +69,12 @@ const Contact = () => {
                 <Text style={{ width: '100%', height: 1, backgroundColor: theme.green }} />
                 {/* Button to actions */}
                 <View style={{ marginTop: 44, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <ButtonNavigate isRight={false} />
-                    <ButtonNavigate isRight={true} text="PAY NOW" />
+                    <TouchableHighlight onPress={() => onIndexChange(0)}>
+                        <ButtonNavigate text="" isRight={false} />
+                    </TouchableHighlight>
+                    <TouchableHighlight onPress={() => onIndexChange(2)}>
+                        <ButtonNavigate isRight={true} text="PAY NOW" />
+                    </TouchableHighlight>
 
                 </View>
             </View >
@@ -80,7 +83,7 @@ const Contact = () => {
     );
 }
 
-export default Contact;
+export default memo(Contact);
 
 const styles = StyleSheet.create({
     container: {

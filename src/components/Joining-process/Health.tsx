@@ -1,13 +1,14 @@
 import { StyleSheet, Text, View, TouchableHighlight, ScrollView } from 'react-native';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { theme } from '../../constants';
 import GlobalStyle from '../../constants/fonts';
 import SelectBox from '../buttons/SelectBox';
 import ButtonNavigate from '../buttons/ButtonNavigate';
 import CustomTextInput from '../../components/CTextInput';
+import { RegisterContext } from '../../context/RegisterContext';
 const Health = () => {
+    const onIndexChange = useContext(RegisterContext).onIndexChange;
     const [accepted, setAccepted] = useState({ list: ['yes', 'no'], active: 'yes' });
-
     const [contact, setContact] = useState({ emergencyContact: '', relation: '', emergencyPhone: '' });
 
     const handleChange = (key: string, value: string) => {
@@ -74,17 +75,17 @@ const Health = () => {
                 </View>
                 {/* Button to actions */}
                 <View style={{ marginTop: 44, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <ButtonNavigate isRight={false} />
-                    <ButtonNavigate isRight={true} text="NEXT" />
+                    <TouchableHighlight onPress={() => onIndexChange(2)}><ButtonNavigate isRight={false} text="" /></TouchableHighlight>
+                    <TouchableHighlight onPress={() => onIndexChange(4)}><ButtonNavigate isRight={true} text="NEXT" /></TouchableHighlight>
 
                 </View>
             </View >
         </ScrollView>
 
-    )
-}
+    );
+};
 
-export default Health
+export default Health;
 
 const styles = StyleSheet.create({
     container: {
@@ -133,7 +134,7 @@ const styles = StyleSheet.create({
     selectBoxText: {
         marginTop: 28,
         marginBottom: 12,
-        color: theme.white
+        color: theme.white,
     },
     selectBoxDesc: {
         width: 265,

@@ -4,8 +4,8 @@ import { theme } from '../../constants';
 import GlobalStyle from '../../constants/fonts';
 import Svg, { Path } from 'react-native-svg';
 import Select from '../buttons/Select';
-const SingleUpgrade = (props) => {
-    const { item } = props
+const SingleUpgrade = (props: any) => {
+    const { item } = props;
     const [expand, setExpand] = useState<boolean>(true);
 
     return (
