@@ -1,13 +1,16 @@
-import * as React from 'react';
+import React from 'react';
+
 import { NavigationContainer } from '@react-navigation/native';
-import AuthNavigator from './src/navigations/AuthNavigator';
-import { StoreProvider } from './src/context/RegisterContext';
+
+import { MedicalProvider } from './src/context/MedicalContext';
+import AppNavigator from './src/navigations/AppNavigator';
+
 export default function App() {
   return (
     <NavigationContainer>
-      <StoreProvider>
-        <AuthNavigator />
-      </StoreProvider>
+      <MedicalProvider>
+        <AppNavigator />
+      </MedicalProvider>
     </NavigationContainer>
   );
 }
