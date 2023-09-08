@@ -10,15 +10,15 @@ import AppoinmentItem from '../../components/appointmentItem/AppoinmentItem';
 import Stethoscope from '../../assets/icons/Stethoscope';
 import Cardiologist from '../../assets/icons/Cardiologist';
 import CardInfo from '../../components/cardInfo/CardInfo';
-import Paracethamol from '../../assets/svg/Paracethamol';
-import VitaminC from '../../assets/svg/VitaminC';
-import VitaminD from '../../assets/svg/VitaminD';
-import General from '../../assets/svg/General';
-import Dentist from '../../assets/svg/Dentist';
-import Geneticist from '../../assets/svg/Geneticist';
-import Nurse from '../../assets/svg/Nurse';
-import Virologist from '../../assets/svg/Virologist';
-import CardiologistBlue from '../../assets/svg/Cardiologist';
+import Paracethamol from '../../assets/icons/Paracethamol';
+import VitaminC from '../../assets/icons/VitaminC';
+import VitaminD from '../../assets/icons/VitaminD';
+import General from '../../assets/icons/General';
+import Dentist from '../../assets/icons/Dentist';
+import Geneticist from '../../assets/icons/Geneticist';
+import Nurse from '../../assets/icons/Nurse';
+import Virologist from '../../assets/icons/Virologist';
+import CardiologistBlue from '../../assets/icons/CardiologistBlue';
 
 const Home = (): JSX.Element => {
   return (
