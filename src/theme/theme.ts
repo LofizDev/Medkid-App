@@ -6,4 +6,5 @@ export const theme = {
   blueSecondary: '#DEE8FF',
   black: '#111111',
   blackSecondary: '#1A2C48',
+  standardBackground: '#F4F4F4',
 };

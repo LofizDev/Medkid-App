@@ -1,9 +1,13 @@
-import { View } from 'react-native';
 import React from 'react';
-import Svg, { Line, Circle } from 'react-native-svg';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const SearchIcon = () => {
+import { View } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import Svg, {
+    Circle,
+    Line,
+} from 'react-native-svg';
+
+const SearchIcon = (): JSX.Element => {
     return (
         <TouchableOpacity>
             <View>
