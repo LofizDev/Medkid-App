@@ -10,7 +10,7 @@ import {
 
 import logo from '../assets/images/logo.png';
 import ButtonMain from '../components/button/ButtonMain';
-import { NavigationOptions } from '../model/HomeScreen.model';
+import { NavigationOptions } from '../model/Navigation.model';
 import {
     spacing,
     theme,

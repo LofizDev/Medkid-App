@@ -3,3 +3,8 @@ export type Doctor = {
   description: string;
   // Another type here...
 };
+
+export type DoctorCard = {
+  doctorName: string;
+  icon: () => JSX.Element;
+};

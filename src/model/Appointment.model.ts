@@ -6,3 +6,8 @@ export type AppointmentsCalendarCard = {
   appointmentName: string;
   icon: () => JSX.Element;
 } & Pick<Doctor, 'doctorName'>;
+
+export type AppointmentCardItem = Omit<
+  AppointmentsCalendarCard,
+  'status' | 'doctorName'
+>;
