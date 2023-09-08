@@ -1,21 +1,25 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 
-import {View, StyleSheet, Text} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 
-import {spacing, theme, typography} from '../../theme/index';
+import { AppointmentCardItem } from '../../model/HomeScreen.model';
+import {
+  spacing,
+  theme,
+  typography,
+} from '../../theme/index';
 
-export interface AppoinmentItemProps {
-  text: string;
-  date: string;
-  icon: ReactElement;
-}
-const AppoinmentItem = (props: AppoinmentItemProps) => {
-  const {text, date, icon} = props;
+const AppoinmentItem = (props: AppointmentCardItem) => {
+  const { appointmentName, date, icon } = props;
   return (
     <View style={styles.button}>
       <View style={styles.flex}>
-        <View style={styles.icon}>{icon}</View>
-        <Text style={[styles.text, typography.smallLabel]}>{text}</Text>
+        <View style={styles.icon}>{React.createElement(icon)}</View>
+        <Text style={[styles.text, typography.smallLabel]}>{appointmentName}</Text>
       </View>
       <Text style={[styles.date, typography.smallLabel]}>{date}</Text>
     </View>

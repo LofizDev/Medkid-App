@@ -1,3 +1,5 @@
+import {NavigationProp, ParamListBase} from '@react-navigation/native';
+
 export type AppointmentCardItem = {
   appointmentName: string;
   date: string;
@@ -13,3 +15,5 @@ export type DoctorCard = {
   doctorName: string;
   icon: () => JSX.Element;
 };
+
+export type NavigationOptions = {navigation: NavigationProp<ParamListBase>};

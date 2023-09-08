@@ -8,26 +8,20 @@ import {
     View,
 } from 'react-native';
 
-import type {
-    NavigationProp,
-    ParamListBase,
-} from '@react-navigation/native';
-
 import logo from '../assets/images/logo.png';
 import ButtonMain from '../components/button/ButtonMain';
+import { NavigationOptions } from '../model/HomeScreen.model';
 import {
     spacing,
     theme,
 } from '../theme';
 
-type IProps = { navigation: NavigationProp<ParamListBase>; }
-
-const Welcome = ({ navigation }: IProps): JSX.Element => {
+const Welcome = ({ navigation }: NavigationOptions): JSX.Element => {
 
     return (
         <View style={styles.container}>
             <Image style={styles.logo} source={logo} />
-            <View  style={styles.intro}>
+            <View style={styles.intro}>
                 <Text style={styles.title}>Med</Text >
                 <Text style={styles.subTitle}>Kit</Text>
             </View>
