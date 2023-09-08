@@ -9,17 +9,13 @@ import {
 
 import AppoinmentItem from '../../components/appointmentItem/AppoinmentItem';
 import CardInfo from '../../components/cardInfo/CardInfo';
-import {
-  appointments,
-  doctors,
-  medications,
-} from '../../constants/HomeScreen.constant';
-import {
-  AppointmentCardItem,
-  DoctorCard,
-  MedicationCard,
-  NavigationOptions,
-} from '../../model/HomeScreen.model';
+import { appointments } from '../../constants/Appointment.constant';
+import { doctors } from '../../constants/Doctor.constant';
+import { medications } from '../../constants/Medication.constant';
+import { AppointmentCardItem } from '../../model/Appointment.model';
+import { DoctorCard } from '../../model/Doctor.model';
+import { MedicationCard } from '../../model/Medical.model';
+import { NavigationOptions } from '../../model/Navigation.model';
 import {
   spacing,
   theme,

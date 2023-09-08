@@ -7,7 +7,7 @@ import {
 
 import AppointmentCalendarItem
     from '../../components/appointmentItem/AppointmentCalendarItem';
-import { appointmentsCalendar } from '../../constants/Appointment.constant';
+import { appointments } from '../../constants/Appointment.constant';
 import { AppointmentsCalendarCard } from '../../model/Appointment.model';
 import {
     spacing,
@@ -19,7 +19,7 @@ const Appointments = (): JSX.Element => {
     return (
         <View>
             <View style={styles.container}>
-                {appointmentsCalendar.map((appointment: AppointmentsCalendarCard, idx: number) => (
+                {appointments.map((appointment: AppointmentsCalendarCard, idx: number) => (
                     <AppointmentCalendarItem
                         key={idx}
                         appointmentName={appointment.appointmentName}
