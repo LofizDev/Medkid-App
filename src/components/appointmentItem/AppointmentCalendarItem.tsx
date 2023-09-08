@@ -6,6 +6,8 @@ import {
     View,
 } from 'react-native';
 
+import { useNavigation } from '@react-navigation/native';
+
 import { AppointmentsCalendarCard } from '../../model/Appointment.model';
 import {
     spacing,
@@ -13,21 +15,24 @@ import {
     typography,
 } from '../../theme/index';
 
-const AppointmentCalendarItem = (props: AppointmentsCalendarCard) => {
+const AppointmentCalendarItem = (props: AppointmentsCalendarCard): JSX.Element => {
+    const navigate: never = useNavigation();
     const { appointmentName, doctorName, status, date, icon } = props;
     return (
-        <View style={styles.button}>
-            <View style={styles.flex}>
-                <View style={styles.icon}>{React.createElement(icon)}</View>
-                <View >
-                    <Text style={[styles.text, typography.smallLabel]}>{appointmentName}</Text>
-                    <Text>{doctorName}</Text>
-                    <Text style={styles.status}>
-                        {status}
-                    </Text>
+        <View onTouchStart={(): void => navigate.navigate(status === 'Video' ? 'appointmentCall' : 'appointmentChat')}>
+            <View style={styles.button}>
+                <View style={styles.flex}>
+                    <View style={styles.icon}>{React.createElement(icon)}</View>
+                    <View>
+                        <Text style={[styles.text, typography.smallLabel]}>{appointmentName}</Text>
+                        <Text>{doctorName}</Text>
+                        <Text style={styles.status}>
+                            {status} appointment
+                        </Text>
+                    </View>
                 </View>
+                <Text style={[styles.date, typography.smallLabel]}>{date}</Text>
             </View>
-            <Text style={[styles.date, typography.smallLabel]}>{date}</Text>
         </View>
     );
 };
