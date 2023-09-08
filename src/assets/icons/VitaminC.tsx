@@ -1,8 +1,13 @@
 import React from 'react';
-import { TouchableOpacity, View, StyleSheet } from 'react-native';
+
+import {
+  StyleSheet,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 
-const VitaminC = () => {
+const VitaminC = (): JSX.Element => {
   return (
     <TouchableOpacity>
       <View style={styles.iconContainer}>

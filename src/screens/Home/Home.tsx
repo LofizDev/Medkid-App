@@ -1,42 +1,31 @@
 import React from 'react';
 
-import {StyleSheet, View, TextInput, Text} from 'react-native';
-import {spacing, theme, typography} from '../../theme/index';
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from 'react-native';
+
 import AppoinmentItem from '../../components/appointmentItem/AppoinmentItem';
-import Stethoscope from '../../assets/icons/Stethoscope';
-import Cardiologist from '../../assets/icons/Cardiologist';
 import CardInfo from '../../components/cardInfo/CardInfo';
-import Paracethamol from '../../assets/icons/Paracethamol';
-import VitaminC from '../../assets/icons/VitaminC';
-import VitaminD from '../../assets/icons/VitaminD';
-import General from '../../assets/icons/General';
-import Dentist from '../../assets/icons/Dentist';
-import Geneticist from '../../assets/icons/Geneticist';
-import Nurse from '../../assets/icons/Nurse';
-import Virologist from '../../assets/icons/Virologist';
-import CardiologistBlue from '../../assets/icons/CardiologistBlue';
+import {
+  appointments,
+  doctors,
+  medications,
+} from '../../constants/HomeScreen.constant';
+import {
+  AppointmentCardItem,
+  DoctorCard,
+  MedicationCard,
+} from '../../model/HomeScreen.model';
+import {
+  spacing,
+  theme,
+  typography,
+} from '../../theme/index';
 
 const Home = (): JSX.Element => {
-  const data = {
-    appointment: [
-      {text: 'General check-up', date: 'Aug 12', icon: Stethoscope},
-      {text: 'Cardiologist check-up', date: 'Aug 28', icon: Cardiologist},
-    ],
-    medications: [
-      {text: 'Paracetamol', icon: Paracethamol},
-      {text: 'Paracetamol', icon: VitaminC},
-      {text: 'Paracetamol', icon: VitaminD},
-    ],
-    doctors: [
-      {text: 'General', icon: General},
-      {text: 'Dentist', icon: Dentist},
-      {text: 'Geneticist', icon: Geneticist},
-      {text: 'Nurse', icon: Nurse},
-      {text: 'Virologist', icon: Virologist},
-      {text: 'Cardiologist', icon: CardiologistBlue},
-    ],
-  };
-
   return (
     <View style={styles.container}>
       <TextInput
@@ -49,19 +38,29 @@ const Home = (): JSX.Element => {
         </Text>
         <Text style={styles.viewAll}>View All</Text>
       </View>
-      {data.appointment.map((item) => (
-          <AppoinmentItem text={item.text} date={item.date} icon={<item.icon />} />
-        ))}
+
+      {/* Appointments */}
+      {appointments.map((appointment: AppointmentCardItem, idx: number) => (
+        <AppoinmentItem
+          key={idx}
+          date={appointment.date}
+          icon={<appointment.icon />}
+          text={appointment.appointmentName} />
+      ))}
+
       <View style={styles.flex}>
         <Text style={[styles.boldTitle, typography.smallTitle]}>
           Current medications
         </Text>
         <Text style={styles.viewAll}>View All</Text>
       </View>
+
+      {/* Medications */}
       <View style={styles.flexCard}>
-        {data.medications.map((item) => (
-          <CardInfo text={item.text} icon={<item.icon />} />
+        {medications.map((medication: MedicationCard, idx: number) => (
+          <CardInfo key={idx} text={medication.medicationName} icon={<medication.icon />} />
         ))}
+
       </View>
       <View style={styles.flex}>
         <Text style={[styles.boldTitle, typography.smallTitle]}>
@@ -70,10 +69,13 @@ const Home = (): JSX.Element => {
         <Text style={styles.viewAll}>View All</Text>
       </View>
       <View style={styles.flexCard}>
-        {data.doctors.map(item => (
-          <CardInfo text={item.text} icon={<item.icon />} />
+
+        {/* Doctors */}
+        {doctors.map((doctor: DoctorCard, idx: number) => (
+          <CardInfo key={idx} text={doctor.doctorName} icon={<doctor.icon />} />
         ))}
       </View>
+
     </View>
   );
 };

@@ -1,15 +1,23 @@
-import React, {ReactElement} from 'react';
+import React, { ReactElement } from 'react';
 
-import {View, StyleSheet, Text} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 
-import {spacing, theme, typography } from '../../theme/index';
+import {
+  spacing,
+  theme,
+  typography,
+} from '../../theme/index';
 
-export interface CardInfoProps {
+export type CardInfoProps = {
   text: string;
   icon: ReactElement;
 }
 const CardInfo = (props: CardInfoProps) => {
-  const {text, icon} = props;
+  const { text, icon } = props;
   return (
     <View style={styles.button}>
       <View style={styles.icon}>{icon}</View>
