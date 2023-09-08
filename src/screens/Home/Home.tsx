@@ -18,6 +18,7 @@ import {
   AppointmentCardItem,
   DoctorCard,
   MedicationCard,
+  NavigationOptions,
 } from '../../model/HomeScreen.model';
 import {
   spacing,
@@ -25,7 +26,7 @@ import {
   typography,
 } from '../../theme/index';
 
-const Home = (): JSX.Element => {
+const Home = ({ navigation }: NavigationOptions): JSX.Element => {
   return (
     <View style={styles.container}>
       <TextInput
@@ -36,31 +37,27 @@ const Home = (): JSX.Element => {
         <Text style={[styles.boldTitle, typography.smallTitle]}>
           Upcoming appointments
         </Text>
-        <Text style={styles.viewAll}>View All</Text>
+        <Text onPress={() => navigation.navigate('appointments')} style={styles.viewAll}>View All</Text>
       </View>
-
       {/* Appointments */}
       {appointments.map((appointment: AppointmentCardItem, idx: number) => (
         <AppoinmentItem
           key={idx}
           date={appointment.date}
-          icon={<appointment.icon />}
-          text={appointment.appointmentName} />
+          icon={appointment.icon}
+          appointmentName={appointment.appointmentName} />
       ))}
-
       <View style={styles.flex}>
         <Text style={[styles.boldTitle, typography.smallTitle]}>
           Current medications
         </Text>
         <Text style={styles.viewAll}>View All</Text>
       </View>
-
       {/* Medications */}
       <View style={styles.flexCard}>
         {medications.map((medication: MedicationCard, idx: number) => (
           <CardInfo key={idx} text={medication.medicationName} icon={<medication.icon />} />
         ))}
-
       </View>
       <View style={styles.flex}>
         <Text style={[styles.boldTitle, typography.smallTitle]}>
@@ -69,13 +66,11 @@ const Home = (): JSX.Element => {
         <Text style={styles.viewAll}>View All</Text>
       </View>
       <View style={styles.flexCard}>
-
         {/* Doctors */}
         {doctors.map((doctor: DoctorCard, idx: number) => (
           <CardInfo key={idx} text={doctor.doctorName} icon={<doctor.icon />} />
         ))}
       </View>
-
     </View>
   );
 };
