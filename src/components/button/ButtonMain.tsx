@@ -12,7 +12,7 @@ import {
     typography,
 } from '../../theme/index';
 
-interface ButtonMainProps {
+type ButtonMainProps = {
     text: string,
 }
 const ButtonMain = (props: ButtonMainProps) => {
