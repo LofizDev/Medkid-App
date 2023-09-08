@@ -4,9 +4,9 @@ import {View, StyleSheet, Text} from 'react-native';
 
 import {spacing, theme, typography } from '../../theme/index';
 
-interface CardInfoProps {
-  text?: string;
-  icon?: ReactElement;
+export interface CardInfoProps {
+  text: string;
+  icon: ReactElement;
 }
 const CardInfo = (props: CardInfoProps) => {
   const {text, icon} = props;

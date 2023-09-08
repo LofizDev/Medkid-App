@@ -4,10 +4,10 @@ import {View, StyleSheet, Text} from 'react-native';
 
 import {spacing, theme, typography} from '../../theme/index';
 
-interface AppoinmentItemProps {
-  text?: string;
-  date?: string;
-  icon?: ReactElement;
+export interface AppoinmentItemProps {
+  text: string;
+  date: string;
+  icon: ReactElement;
 }
 const AppoinmentItem = (props: AppoinmentItemProps) => {
   const {text, date, icon} = props;
