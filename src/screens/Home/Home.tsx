@@ -59,7 +59,7 @@ const Home = ({ navigation }: NavigationOptions): JSX.Element => {
         <Text style={[styles.boldTitle, typography.smallTitle]}>
           Find your doctor
         </Text>
-        <Text style={styles.viewAll}>View All</Text>
+        <Text onPress={() => navigation.navigate('doctors')} style={styles.viewAll}>View All</Text>
       </View>
       <View style={styles.flexCard}>
         {/* Doctors */}
