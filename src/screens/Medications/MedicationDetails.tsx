@@ -11,6 +11,9 @@ import { spacing, theme, typography } from '../../theme';
 import { medications } from '../../constants/Medication.constant';
 import { NavigationOptions } from '../../model/Navigation.model';
 import ButtonMain from '../../components/button/ButtonMain';
+import Notification from '../../assets/icons/Notification';
+import CalendarIcon from '../../assets/icons/CalendarIcon';
+import SwitchButton from '../../components/switch/SwitchButton';
 
 type MedicalDetailParam = {
     params: {
@@ -20,11 +23,11 @@ type MedicalDetailParam = {
 
 const MedicationDetails = ({ navigation }: NavigationOptions): JSX.Element => {
     const route = useRoute<RouteProp<MedicalDetailParam>>();
-    const [isEnabled, setIsEnabled] = useState<boolean>(false);
+    
     const medicationId = route.params?.medicationId;
     const medication = medications.find((item) => item.id === medicationId) ?? medications[0];
 
-    const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+    
 
     if(!medication) return <Text>Not found medication!</Text>
     return (
@@ -34,26 +37,27 @@ const MedicationDetails = ({ navigation }: NavigationOptions): JSX.Element => {
                 <Text style={styles.text}>{medication.medicationName}</Text>
                 <View style={styles.detailItem}>
                     <View style={styles.item}>
-                        <View>
-                        <Text>fd</Text>
+                        <View style={styles.flexItem}>
+                        <Notification/>
+                        <Text style={styles.textItem}>Everyday at 9:00</Text>
                         </View>
-
+                        <SwitchButton/>
                     </View>
                     <View style={styles.item}>
-                        <View>
-                        <Text>fd</Text>
+                        <View style={styles.flexItem}>
+                        <View style={styles.redDot}></View>
+                        <Text style={styles.textItem}>Before meal</Text>
                         </View>
-                        <Switch trackColor={{false: '#767577', true: '#81b0ff'}}
-        thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
-        ios_backgroundColor="#3e3e3e"
-        onValueChange={toggleSwitch}
-        value={isEnabled}/>
+                        
                     </View>
-                    <View style={styles.item}>
-                        <View>
-                        <Text>fd</Text>
+                    <View style={{ ...styles.item, ...styles.thirdItem }}>
+                        <View style={styles.flexItem}>
+                            <CalendarIcon/>
+                        <Text style={{ ...styles.textItem, ...styles.lastText }}>Finish course</Text>
                         </View>
-
+                        <View style={styles.lastItem}>
+                            <Text style={styles.lastTextItem}>Aug 23</Text>
+                        </View>
                     </View>
                 </View>
             </View >
@@ -105,7 +109,51 @@ const styles = StyleSheet.create({
     item: {
         width: '100%',
         backgroundColor: theme.white,
-        padding: spacing.s,
+        height: 50,
         borderRadius: spacing.s,
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingLeft: spacing.s,
+        paddingRight: spacing.s,
+    },
+    thirdItem: {
+        paddingRight: spacing.xxs,
+    },
+    flexItem: {
+        display: 'flex',
+        width: '50%',
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        gap: spacing.s
+    },
+    textItem: {
+        fontWeight: '400',
+        color: theme.blackSecondary
+    },
+    lastText: {
+        fontWeight: '700',
+    },
+    lastItem: {
+        backgroundColor: '#d9dbe0',
+        height: '84%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingLeft: spacing.s,
+        paddingRight: spacing.s,
+        borderRadius: spacing.s,
+    },
+    lastTextItem: {
+        fontWeight: '800',
+        color: theme.blackSecondary,
+    },
+    redDot: {
+        width: 16,
+        height: 16,
+        backgroundColor: theme.red,
+        borderRadius: 99,
     }
 })
