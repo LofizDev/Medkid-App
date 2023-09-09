@@ -33,10 +33,9 @@ const Appointments = ({ navigation }: NavigationOptions): JSX.Element => {
                 ))}
             </View >
             <View onTouchStart={() => navigation.navigate('appointmentBooking')} style={styles.button}>
-                <ButtonMain text="Book now" />
+                <ButtonMain text="Book new appointment" />
             </View>
         </View>
-
     );
 };
 
