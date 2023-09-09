@@ -9,6 +9,7 @@ import Stethoscope from './Stethoscope';
 import Virologist from './Virologist';
 import VitaminC from './VitaminC';
 import VitaminD from './VitaminD';
+import PlusAddItem from './PlusAddItem';
 
 export {
   Cardiologist,
@@ -22,4 +23,5 @@ export {
   Virologist,
   VitaminC,
   VitaminD,
+  PlusAddItem,
 };

@@ -1,8 +1,10 @@
 import React, { ReactElement } from 'react';
 
 import {
+  GestureResponderEvent,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from 'react-native';
 
@@ -15,14 +17,15 @@ import {
 export type CardInfoProps = {
   text: string;
   icon: ReactElement;
+  onPress?: (e: GestureResponderEvent) => void;
 }
 const CardInfo = (props: CardInfoProps) => {
   const { text, icon } = props;
   return (
-    <View style={styles.button}>
+    <TouchableOpacity onPress={(e: GestureResponderEvent) => props.onPress && props.onPress(e)} style={styles.button}>
       <View style={styles.icon}>{icon}</View>
       <Text style={[styles.text, typography.smallText]}>{text}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -38,7 +41,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '30%',
+    width: `31%`,
   },
   icon: {
     paddingHorizontal: spacing.xs,

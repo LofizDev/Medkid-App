@@ -1,4 +1,7 @@
+import { StyleProp, ViewStyle } from "react-native";
+
 export type MedicationCard = {
+  id: string;
   medicationName: string;
-  icon: () => JSX.Element;
+  icon: ({ style }: { style?: StyleProp<ViewStyle> }) => JSX.Element;
 };

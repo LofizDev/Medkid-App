@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {
+  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -24,7 +25,7 @@ import {
 
 const Home = ({ navigation }: NavigationOptions): JSX.Element => {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <TextInput
         style={styles.input}
         placeholder="Search doctors, appointments,..."
@@ -47,7 +48,7 @@ const Home = ({ navigation }: NavigationOptions): JSX.Element => {
         <Text style={[styles.boldTitle, typography.smallTitle]}>
           Current medications
         </Text>
-        <Text style={styles.viewAll}>View All</Text>
+        <Text style={styles.viewAll} onPress={() => navigation.navigate('medications')}>View All</Text>
       </View>
       {/* Medications */}
       <View style={styles.flexCard}>
@@ -67,7 +68,7 @@ const Home = ({ navigation }: NavigationOptions): JSX.Element => {
           <CardInfo key={idx} text={topic.topicName} icon={<topic.icon />} />
         ))}
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

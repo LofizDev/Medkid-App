@@ -24,29 +24,28 @@ const Stack = createStackNavigator();
 const AppNavigator = (): JSX.Element => {
 
     return (
-        <Stack.Navigator >
+        <Stack.Navigator screenOptions={{
+            headerStyle: { backgroundColor: theme.standardBackground },
+            headerRight: () => (
+                <Image
+                    style={{ height: 30, width: 30, borderRadius: 50, margin: spacing.s, resizeMode: 'cover' }}
+                    resizeMethod="auto" source={avartar} /> as React.ReactElement),
+        }} >
             <Stack.Screen name="welcome" options={{ headerShown: false }} component={Welcome} />
-            <Stack.Screen name="profile" options={{ headerShown: false }} component={Profile} />
+            <Stack.Screen name="profile" component={Profile} />
             <Stack.Screen name="home" options={{ headerShown: false }} component={Home} />
-            <Stack.Screen name="medications" component={Medications} />
+            <Stack.Screen name="medications" options={{ title: 'My medications' }} component={Medications} />
             <Stack.Screen
                 name="appointments"
-                options={{
-                    title: 'Your appointments',
-                    headerStyle: { backgroundColor: theme.standardBackground },
-                    headerRight: () => (
-                        <Image
-                            style={{ height: 30, width: 30, borderRadius: 50, margin: spacing.s, resizeMode: 'cover' }}
-                            resizeMethod="auto" source={avartar} /> as React.ReactElement),
-                }}
+                options={{ title: 'Your appointments' }}
                 component={Appointments} />
             <Stack.Screen name="appointmentChat" component={AppointmentChat} />
             <Stack.Screen
                 options={{ title: '', headerStyle: { backgroundColor: theme.standardBackground } }}
                 name="appointmentCall"
                 component={AppointmentCall} />
-            <Stack.Screen name="medicationDetails" component={MedicationDetails} />
-            <Stack.Screen name="appointmentBooking" component={AppointmentBooking} />
+            <Stack.Screen name="medicationDetails" options={{ title: '', headerRight: undefined }} component={MedicationDetails} />
+            <Stack.Screen name="appointmentBooking" component={AppointmentBooking}/>
         </Stack.Navigator>
     );
 };
