@@ -4,10 +4,7 @@ import {StyleSheet, View, Text} from 'react-native';
 
 import {spacing, theme} from '../../theme/index';
 
-type AppointmentOptionProps = {
-  text?: string;
-  day?: string;
-};
+import { AppointmentOptionProps } from '../../model/Appointment.model';
 
 const AppointmentOption = (props: AppointmentOptionProps) => {
   const {text, day} = props;

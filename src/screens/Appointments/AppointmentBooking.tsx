@@ -11,17 +11,18 @@ import {
 } from '../../constants/Appointment.constant';
 import ButtonMain from '../../components/button/ButtonMain';
 import AppointmentOption from '../../components/appointmentItem/AppointmentOption';
+import { AppointmentOptionsDate, AppointmentOptionsTime } from '../../model/Appointment.model';
 
 const AppointmentBooking = ({navigation}: NavigationOptions): JSX.Element => {
-  const [open, setOpen] = useState(false);
-  const [value, setValue] = useState(topics[1].topicName);
+  const [isShowListTopic, setIsShowListTopic] = useState<boolean>(false);
+  const [selectedTopic, setSelectedTopic] = useState<string>(topics[1].topicName);
   const items = topics.map(topic => ({
     label: topic.topicName,
     value: topic.topicName,
   }));
-  const [openDoctor, setOpenDoctor] = useState(false);
-  const [valueDoctor, setValueDoctor] = useState(doctor[1].doctorName);
-  const itemsDoctor = doctor.map(item => ({
+  const [isShowListDoctor, setIsShowListDoctor] = useState<boolean>(false);
+  const [valueDoctor, setValueDoctor] = useState<string>(doctor[1].doctorName);
+  const listDoctors = doctor.map((item) => ({
     label: 'Dr. ' + item.doctorName,
     value: item.doctorName,
   }));
@@ -32,20 +33,20 @@ const AppointmentBooking = ({navigation}: NavigationOptions): JSX.Element => {
         <Text style={styles.fieldTitle}>Field</Text>
         <View style={styles.dropdownTop}>
           <DropDownPicker
-            open={open}
-            value={value}
+            open={isShowListTopic}
+            value={selectedTopic}
             items={items}
-            setOpen={setOpen}
-            setValue={setValue}
+            setOpen={setIsShowListTopic}
+            setValue={setSelectedTopic}
           />
         </View>
         <Text style={styles.fieldTitle}>Doctor</Text>
         <View style={styles.dropdownBot}>
           <DropDownPicker
-            open={openDoctor}
+            open={isShowListDoctor}
             value={valueDoctor}
-            items={itemsDoctor}
-            setOpen={setOpenDoctor}
+            items={listDoctors}
+            setOpen={setIsShowListDoctor}
             setValue={setValueDoctor}
           />
         </View>
@@ -56,14 +57,14 @@ const AppointmentBooking = ({navigation}: NavigationOptions): JSX.Element => {
         </View>
         <Text style={styles.fieldTitle}>Select Date</Text>
         <View style={styles.optionAppointment}>
-          {appointmentOptionsDate.map((item, index) => (
-            <AppointmentOption text={item.text} day={item.day} />
+          {appointmentOptionsDate.map((item: AppointmentOptionsDate, key: number) => (
+            <AppointmentOption text={item.text} day={item.day} key={key}/>
           ))}
         </View>
         <Text style={styles.fieldTitle}>Select Time</Text>
         <View style={styles.optionAppointment}>
-          {appointmentOptionsTime.map((item, index) => (
-            <AppointmentOption day={item.text} />
+          {appointmentOptionsTime.map((item: AppointmentOptionsTime, key: number) => (
+            <AppointmentOption day={item.text} key={key}/>
           ))}
         </View>
       </View>

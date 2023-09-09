@@ -20,3 +20,8 @@ export type AppointmentOptionsDate = {
 export type AppointmentOptionsTime = {
   text: string;
 };
+
+export type AppointmentOptionProps = {
+  text?: string;
+  day?: string;
+};
