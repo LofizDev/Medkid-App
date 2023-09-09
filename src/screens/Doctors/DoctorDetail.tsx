@@ -17,7 +17,7 @@ import {
     typography,
 } from '../../theme';
 
-type DoctorDetailRouteParams = {
+export type DoctorDetailRouteParams = {
     DoctorDetail: {
         doctor: Doctor
     };

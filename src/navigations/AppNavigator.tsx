@@ -9,6 +9,7 @@ import AppointmentBooking from '../screens/Appointments/AppointmentBooking';
 import AppointmentCall from '../screens/Appointments/AppointmentCall';
 import AppointmentChat from '../screens/Appointments/AppointmentChat';
 import Appointments from '../screens/Appointments/Appointments';
+import AppointmentSuccess from '../screens/Appointments/AppointmentSuccess';
 import DoctorDetail from '../screens/Doctors/DoctorDetail';
 import Doctors from '../screens/Doctors/Doctors';
 import Home from '../screens/Home/Home';
@@ -42,6 +43,7 @@ const AppNavigator = (): JSX.Element => {
                 component={Home}
             />
             <Stack.Screen name="medications" component={Medications} />
+            <Stack.Screen name="appointmentSuccess" options={{ headerShown: false }} component={AppointmentSuccess} />
             <Stack.Screen
                 name="appointments"
                 options={{
