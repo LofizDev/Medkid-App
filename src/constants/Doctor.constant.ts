@@ -9,10 +9,10 @@ import {
 import {DoctorCard} from '../model/Doctor.model';
 
 export const doctors: DoctorCard[] = [
-  {doctorName: 'General', icon: General},
-  {doctorName: 'Dentist', icon: Dentist},
-  {doctorName: 'Geneticist', icon: Geneticist},
-  {doctorName: 'Nurse', icon: Nurse},
-  {doctorName: 'Virologist', icon: Virologist},
-  {doctorName: 'Cardiologist', icon: CardiologistBlue},
+  {specialty: 'General', icon: General},
+  {specialty: 'Dentist', icon: Dentist},
+  {specialty: 'Geneticist', icon: Geneticist},
+  {specialty: 'Nurse', icon: Nurse},
+  {specialty: 'Virologist', icon: Virologist},
+  {specialty: 'Cardiologist', icon: CardiologistBlue},
 ];

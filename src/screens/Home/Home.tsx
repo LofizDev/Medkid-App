@@ -64,7 +64,7 @@ const Home = ({ navigation }: NavigationOptions): JSX.Element => {
       <View style={styles.flexCard}>
         {/* Doctors */}
         {doctors.map((doctor: DoctorCard, idx: number) => (
-          <CardInfo key={idx} text={doctor.doctorName} icon={<doctor.icon />} />
+          <CardInfo key={idx} text={doctor.specialty} icon={<doctor.icon />} />
         ))}
       </View>
     </View>
