@@ -33,10 +33,10 @@ const AppointmentCall = ({ navigation }: NavigationOptions): JSX.Element => {
                         <Micro />
                     </View>
                     <View onTouchStart={() => navigation.navigate('appointments')} style={styles.cancel}>
-                        <Phone />
+                        <Phone color={theme.white} />
                     </View>
                     <View style={styles.actionBox}>
-                        <Video />
+                        <Video color={theme.white} />
                     </View>
                 </View>
             </View>
