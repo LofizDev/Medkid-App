@@ -6,13 +6,24 @@ import {
   Nurse,
   Virologist,
 } from '../assets/icons';
-import {DoctorCard} from '../model/Doctor.model';
+import {Doctor, TopicCard} from '../model/Doctor.model';
 
-export const doctors: DoctorCard[] = [
-  {specialty: 'General', icon: General},
-  {specialty: 'Dentist', icon: Dentist},
-  {specialty: 'Geneticist', icon: Geneticist},
-  {specialty: 'Nurse', icon: Nurse},
-  {specialty: 'Virologist', icon: Virologist},
-  {specialty: 'Cardiologist', icon: CardiologistBlue},
+export const topics: TopicCard[] = [
+  {topicName: 'General', icon: General},
+  {topicName: 'Dentist', icon: Dentist},
+  {topicName: 'Geneticist', icon: Geneticist},
+  {topicName: 'Nurse', icon: Nurse},
+  {topicName: 'Virologist', icon: Virologist},
+  {topicName: 'Cardiologist', icon: CardiologistBlue},
+];
+
+export const doctor: Doctor[] = [
+  {
+    doctorName: 'Minh',
+    description: 'abc',
+    specialty: 'b',
+    rating: 3,
+    totalPatients: 23,
+  },
+  // ....
 ];

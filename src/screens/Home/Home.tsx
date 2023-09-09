@@ -10,10 +10,10 @@ import {
 import AppoinmentItem from '../../components/appointmentItem/AppoinmentItem';
 import CardInfo from '../../components/cardInfo/CardInfo';
 import { appointments } from '../../constants/Appointment.constant';
-import { doctors } from '../../constants/Doctor.constant';
+import { topics } from '../../constants/Doctor.constant';
 import { medications } from '../../constants/Medication.constant';
 import { AppointmentCardItem } from '../../model/Appointment.model';
-import { DoctorCard } from '../../model/Doctor.model';
+import { TopicCard } from '../../model/Doctor.model';
 import { MedicationCard } from '../../model/Medical.model';
 import { NavigationOptions } from '../../model/Navigation.model';
 import {
@@ -63,8 +63,8 @@ const Home = ({ navigation }: NavigationOptions): JSX.Element => {
       </View>
       <View style={styles.flexCard}>
         {/* Doctors */}
-        {doctors.map((doctor: DoctorCard, idx: number) => (
-          <CardInfo key={idx} text={doctor.specialty} icon={<doctor.icon />} />
+        {topics.map((topic: TopicCard, idx: number) => (
+          <CardInfo key={idx} text={topic.topicName} icon={<topic.icon />} />
         ))}
       </View>
     </View>

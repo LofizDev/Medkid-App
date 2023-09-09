@@ -7,17 +7,19 @@ import {
 
 import AppointmentCalendarItem
     from '../../components/appointmentItem/AppointmentCalendarItem';
+import ButtonMain from '../../components/button/ButtonMain';
 import { appointments } from '../../constants/Appointment.constant';
 import { AppointmentsCalendarCard } from '../../model/Appointment.model';
+import { NavigationOptions } from '../../model/Navigation.model';
 import {
     spacing,
     theme,
 } from '../../theme';
 
-const Appointments = (): JSX.Element => {
+const Appointments = ({ navigation }: NavigationOptions): JSX.Element => {
 
     return (
-        <View>
+        <View style={{ flex: 1 }}>
             <View style={styles.container}>
                 {appointments.map((appointment: AppointmentsCalendarCard, idx: number) => (
                     <AppointmentCalendarItem
@@ -30,6 +32,9 @@ const Appointments = (): JSX.Element => {
                     />
                 ))}
             </View >
+            <View onTouchStart={() => navigation.navigate('appointmentBooking')} style={styles.button}>
+                <ButtonMain text="Book now" />
+            </View>
         </View>
 
     );
@@ -72,5 +77,10 @@ const styles = StyleSheet.create({
     },
     viewAll: {
         fontSize: 14,
+    },
+    button: {
+        position: 'absolute',
+        bottom: spacing.md,
+        width: '100%',
     },
 });
