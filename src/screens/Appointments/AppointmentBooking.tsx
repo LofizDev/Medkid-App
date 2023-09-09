@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import {spacing, theme} from '../../theme';
-import {topics, doctor} from '../../constants/Doctor.constant';
+import {topics, doctors} from '../../constants/Doctor.constant';
 import {NavigationOptions} from '../../model/Navigation.model';
 import {
   appointmentOptionsDate,
@@ -12,17 +12,20 @@ import {
 import ButtonMain from '../../components/button/ButtonMain';
 import AppointmentOption from '../../components/appointmentItem/AppointmentOption';
 import { AppointmentOptionsDate, AppointmentOptionsTime } from '../../model/Appointment.model';
+import { Doctor, TopicCard } from '../../model/Doctor.model';
 
 const AppointmentBooking = ({navigation}: NavigationOptions): JSX.Element => {
   const [isShowListTopic, setIsShowListTopic] = useState<boolean>(false);
-  const [selectedTopic, setSelectedTopic] = useState<string>(topics[1].topicName);
-  const items = topics.map(topic => ({
+  const [isShowListDoctor, setIsShowListDoctor] = useState<boolean>(false);
+  const [selectedDoctor, setSelectedDoctor] = useState<string>(doctors[0].doctorName);
+  const [selectedTopic, setSelectedTopic] = useState<string>(topics[0].topicName);
+
+  const listTopics = topics.map((topic: TopicCard) => ({
     label: topic.topicName,
     value: topic.topicName,
   }));
-  const [isShowListDoctor, setIsShowListDoctor] = useState<boolean>(false);
-  const [valueDoctor, setValueDoctor] = useState<string>(doctor[1].doctorName);
-  const listDoctors = doctor.map((item) => ({
+
+  const listDoctors = doctors.map((item: Doctor) => ({
     label: 'Dr. ' + item.doctorName,
     value: item.doctorName,
   }));
@@ -35,7 +38,7 @@ const AppointmentBooking = ({navigation}: NavigationOptions): JSX.Element => {
           <DropDownPicker
             open={isShowListTopic}
             value={selectedTopic}
-            items={items}
+            items={listTopics}
             setOpen={setIsShowListTopic}
             setValue={setSelectedTopic}
           />
@@ -44,10 +47,10 @@ const AppointmentBooking = ({navigation}: NavigationOptions): JSX.Element => {
         <View style={styles.dropdownBot}>
           <DropDownPicker
             open={isShowListDoctor}
-            value={valueDoctor}
+            value={selectedDoctor}
             items={listDoctors}
             setOpen={setIsShowListDoctor}
-            setValue={setValueDoctor}
+            setValue={setSelectedDoctor}
           />
         </View>
         <Text style={styles.fieldTitle}>Appointment type</Text>
@@ -57,14 +60,14 @@ const AppointmentBooking = ({navigation}: NavigationOptions): JSX.Element => {
         </View>
         <Text style={styles.fieldTitle}>Select Date</Text>
         <View style={styles.optionAppointment}>
-          {appointmentOptionsDate.map((item: AppointmentOptionsDate, key: number) => (
-            <AppointmentOption text={item.text} day={item.day} key={key}/>
+          {appointmentOptionsDate.map((appointment: AppointmentOptionsDate, key: number) => (
+            <AppointmentOption text={appointment.text} day={appointment.day} key={key}/>
           ))}
         </View>
         <Text style={styles.fieldTitle}>Select Time</Text>
         <View style={styles.optionAppointment}>
-          {appointmentOptionsTime.map((item: AppointmentOptionsTime, key: number) => (
-            <AppointmentOption day={item.text} key={key}/>
+          {appointmentOptionsTime.map((appointment: AppointmentOptionsTime, key: number) => (
+            <AppointmentOption day={appointment.text} key={key}/>
           ))}
         </View>
       </View>

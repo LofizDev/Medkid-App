@@ -17,7 +17,7 @@ export const topics: TopicCard[] = [
   {topicName: 'Cardiologist', icon: CardiologistBlue},
 ];
 
-export const doctor: Doctor[] = [
+export const doctors: Doctor[] = [
   {
     doctorName: 'Eva',
     description:

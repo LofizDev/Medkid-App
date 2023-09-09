@@ -9,6 +9,7 @@ import AppointmentBooking from '../screens/Appointments/AppointmentBooking';
 import AppointmentCall from '../screens/Appointments/AppointmentCall';
 import AppointmentChat from '../screens/Appointments/AppointmentChat';
 import Appointments from '../screens/Appointments/Appointments';
+import Doctors from '../screens/Doctors/Doctors';
 import Home from '../screens/Home/Home';
 import MedicationDetails from '../screens/Medications/MedicationDetails';
 import Medications from '../screens/Medications/Medications';
@@ -59,14 +60,20 @@ const AppNavigator = (): JSX.Element => {
         }}
         component={Appointments}
       />
-      <Stack.Screen name="appointmentChat" component={AppointmentChat} />
       <Stack.Screen
-        options={{
-          title: '',
-          headerStyle: {backgroundColor: theme.standardBackground},
-        }}
+        options={{title: '', headerTransparent: true}}
+        name="appointmentChat"
+        component={AppointmentChat}
+      />
+      <Stack.Screen
         name="appointmentCall"
         component={AppointmentCall}
+        options={{title: '', headerTransparent: true}}
+      />
+      <Stack.Screen
+        name="doctors"
+        component={Doctors}
+        options={{title: '', headerTransparent: true}}
       />
       <Stack.Screen name="medicationDetails" component={MedicationDetails} />
       <Stack.Screen
