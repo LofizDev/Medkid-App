@@ -6,12 +6,16 @@ import {
     View,
 } from 'react-native';
 
+import { spacing } from '../../theme';
+
 const AppointmentChat = (): JSX.Element => {
 
     return (
-        <View>
-            <Text style={styles.container}>
-                AppointmentChat
+        <View style={styles.container}>
+            <Text style={styles.headerBar}>
+                <View>
+
+                </View>
             </Text >
         </View>
 
@@ -21,5 +25,11 @@ const AppointmentChat = (): JSX.Element => {
 export default AppointmentChat;
 
 const styles = StyleSheet.create({
-    container: {},
+    container: {
+        flex: 1,
+    },
+    headerBar: {
+        padding: spacing.s,
+        marginLeft: spacing.xl,
+    }
 })

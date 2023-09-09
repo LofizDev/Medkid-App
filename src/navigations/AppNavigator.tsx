@@ -40,9 +40,12 @@ const AppNavigator = (): JSX.Element => {
                             resizeMethod="auto" source={avartar} /> as React.ReactElement),
                 }}
                 component={Appointments} />
-            <Stack.Screen name="appointmentChat" component={AppointmentChat} />
             <Stack.Screen
-                options={{ title: '', headerStyle: { backgroundColor: theme.standardBackground } }}
+                options={{ title: '', headerTransparent: true }}
+                name="appointmentChat"
+                component={AppointmentChat} />
+            <Stack.Screen
+                options={{ title: '', headerTransparent: true }}
                 name="appointmentCall"
                 component={AppointmentCall} />
             <Stack.Screen name="medicationDetails" component={MedicationDetails} />
