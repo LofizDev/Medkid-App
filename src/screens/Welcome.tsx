@@ -1,19 +1,18 @@
 import React from 'react';
 
 import {
-    Image,
-    StyleSheet,
-    Text,
-    TouchableHighlight,
-    View,
+  Image,
+  StyleSheet,
+  Text,
+  View,
 } from 'react-native';
 
 import logo from '../assets/images/logo.png';
 import ButtonMain from '../components/button/ButtonMain';
-import { NavigationOptions } from '../model/Navigation.model';
+import {NavigationOptions} from '../model/Navigation.model';
 import {
-    spacing,
-    theme,
+  spacing,
+  theme,
 } from '../theme';
 
 const Welcome = ({ navigation }: NavigationOptions): JSX.Element => {
@@ -25,9 +24,9 @@ const Welcome = ({ navigation }: NavigationOptions): JSX.Element => {
                 <Text style={styles.title}>Med</Text >
                 <Text style={styles.subTitle}>Kit</Text>
             </View>
-            <TouchableHighlight onPress={() => navigation.navigate('home')} style={styles.button}>
+            <View onTouchStart={() => navigation.navigate('home')} style={styles.button}>
                 <ButtonMain text="Start" />
-            </TouchableHighlight>
+            </View>
         </View>
     );
 }

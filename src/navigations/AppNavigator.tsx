@@ -14,7 +14,10 @@ import MedicationDetails from '../screens/Medications/MedicationDetails';
 import Medications from '../screens/Medications/Medications';
 import Profile from '../screens/Profile/Profile';
 import Welcome from '../screens/Welcome';
-import { spacing } from '../theme';
+import {
+    spacing,
+    theme,
+} from '../theme';
 
 const Stack = createStackNavigator();
 
@@ -26,9 +29,11 @@ const AppNavigator = (): JSX.Element => {
             <Stack.Screen name="profile" options={{ headerShown: false }} component={Profile} />
             <Stack.Screen name="home" options={{ headerShown: false }} component={Home} />
             <Stack.Screen name="medications" component={Medications} />
-            <Stack.Screen name="appointments"
+            <Stack.Screen
+                name="appointments"
                 options={{
                     title: 'Your appointments',
+                    headerStyle: { backgroundColor: theme.standardBackground },
                     headerRight: () => (
                         <Image
                             style={{ height: 30, width: 30, borderRadius: 50, margin: spacing.s, resizeMode: 'cover' }}
@@ -36,7 +41,10 @@ const AppNavigator = (): JSX.Element => {
                 }}
                 component={Appointments} />
             <Stack.Screen name="appointmentChat" component={AppointmentChat} />
-            <Stack.Screen name="appointmentCall" component={AppointmentCall} />
+            <Stack.Screen
+                options={{ title: '', headerStyle: { backgroundColor: theme.standardBackground } }}
+                name="appointmentCall"
+                component={AppointmentCall} />
             <Stack.Screen name="medicationDetails" component={MedicationDetails} />
             <Stack.Screen name="appointmentBooking" component={AppointmentBooking} />
         </Stack.Navigator>

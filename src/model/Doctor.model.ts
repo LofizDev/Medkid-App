@@ -1,10 +1,11 @@
 export type Doctor = {
+  specialty: string;
   doctorName: string;
   description: string;
   // Another type here...
 };
 
 export type DoctorCard = {
-  doctorName: string;
+  specialty: string;
   icon: () => JSX.Element;
 };
