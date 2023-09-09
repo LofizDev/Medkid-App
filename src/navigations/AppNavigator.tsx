@@ -1,10 +1,8 @@
 import React from 'react';
 
-import { Image } from 'react-native';
-
 import { createStackNavigator } from '@react-navigation/stack';
 
-import avartar from '../assets/images/mathew.jpg';
+import PersonalProfile from '../components/profile/PersonalProfile';
 import AppointmentBooking from '../screens/Appointments/AppointmentBooking';
 import AppointmentCall from '../screens/Appointments/AppointmentCall';
 import AppointmentChat from '../screens/Appointments/AppointmentChat';
@@ -17,64 +15,59 @@ import MedicationDetails from '../screens/Medications/MedicationDetails';
 import Medications from '../screens/Medications/Medications';
 import Profile from '../screens/Profile/Profile';
 import Welcome from '../screens/Welcome';
-import {
-    spacing,
-    theme,
-} from '../theme';
+import { theme } from '../theme';
 
 const Stack = createStackNavigator();
 
 const AppNavigator = (): JSX.Element => {
+    const Avatar = <PersonalProfile />;
+    const HIDDEN_HEADER = { headerShown: false, title: '' };
+
+    const TRANSPARENT_HEADER = {
+        headerStyle: { backgroundColor: theme.standardBackground },
+        headerShown: true, title: '',
+    };
+
+    const dynamicOptionHeader = (title: string) => {
+        return {
+            headerStyle: { backgroundColor: theme.standardBackground },
+            headerShown: true, title: title,
+            headerRight: () => (Avatar) as React.ReactElement,
+        };
+    };
+
     return (
         <Stack.Navigator>
+
             <Stack.Screen
                 name="welcome"
-                options={{ headerShown: false }}
+                options={HIDDEN_HEADER}
                 component={Welcome}
             />
             <Stack.Screen
                 name="profile"
-                options={{ headerShown: false }}
+                options={HIDDEN_HEADER}
                 component={Profile}
             />
             <Stack.Screen
                 name="home"
-                options={{ headerShown: false }}
+                options={HIDDEN_HEADER}
                 component={Home}
             />
-            <Stack.Screen name="medications" component={Medications} />
-            <Stack.Screen name="appointmentSuccess" options={{ headerShown: false }} component={AppointmentSuccess} />
             <Stack.Screen
-                name="appointments"
-                options={{
-                    title: 'Your appointments',
-                    headerStyle: { backgroundColor: theme.standardBackground },
-                    headerRight: () =>
-                        (
-                            <Image
-                                style={{
-                                    height: 30,
-                                    width: 30,
-                                    borderRadius: 50,
-                                    margin: spacing.s,
-                                    resizeMode: 'cover',
-                                }}
-                                resizeMethod="auto"
-                                source={avartar}
-                            />
-                        ) as React.ReactElement,
-                }}
-                component={Appointments}
+                name="appointmentSuccess"
+                options={HIDDEN_HEADER}
+                component={AppointmentSuccess}
             />
             <Stack.Screen
-                options={{ title: '', headerTransparent: true }}
+                options={HIDDEN_HEADER}
                 name="appointmentChat"
                 component={AppointmentChat}
             />
             <Stack.Screen
                 name="appointmentCall"
                 component={AppointmentCall}
-                options={{ title: '', headerTransparent: true }}
+                options={HIDDEN_HEADER}
             />
             <Stack.Screen
                 name="doctors"
@@ -84,33 +77,22 @@ const AppNavigator = (): JSX.Element => {
             <Stack.Screen
                 name="doctorDetail"
                 component={DoctorDetail}
-                options={{ title: '', headerTransparent: true }}
+                options={TRANSPARENT_HEADER}
             />
-            <Stack.Screen name="medicationDetails" component={MedicationDetails} />
             <Stack.Screen
                 name="appointmentBooking"
-                options={{
-                    title: 'Book your appointment',
-                    headerStyle: { backgroundColor: theme.standardBackground },
-                    headerRight: () =>
-                        (
-                            <Image
-                                style={{
-                                    height: 30,
-                                    width: 30,
-                                    borderRadius: 50,
-                                    margin: spacing.s,
-                                    resizeMode: 'cover',
-                                }}
-                                resizeMethod="auto"
-                                source={avartar}
-                            />
-                        ) as React.ReactElement,
-                }}
+                options={dynamicOptionHeader('Book your appointment')}
                 component={AppointmentBooking}
             />
+            <Stack.Screen
+                name="appointments"
+                options={dynamicOptionHeader('Your appointment')}
+                component={Appointments}
+            />
+            <Stack.Screen name="medications" component={Medications} />
+            <Stack.Screen name="medicationDetails" component={MedicationDetails} />
         </Stack.Navigator>
     );
 };
 
-export default AppNavigator;
+export default AppNavigator
