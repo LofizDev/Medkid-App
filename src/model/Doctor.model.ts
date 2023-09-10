@@ -4,7 +4,7 @@ export type Doctor = {
   description: string;
   rating?: number;
   totalPatients?: number;
-  // Another type here...
+  avatar?: React.ReactElement | string;
 };
 
 export type TopicCard = {

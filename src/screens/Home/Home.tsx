@@ -4,12 +4,13 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  TextInput,
   View,
 } from 'react-native';
 
+import Search from '../../assets/icons/Search';
 import AppoinmentItem from '../../components/appointmentItem/AppoinmentItem';
 import CardInfo from '../../components/cardInfo/CardInfo';
+import { InputBase } from '../../components/input/InputBase';
 import { appointments } from '../../constants/Appointment.constant';
 import { topics } from '../../constants/Doctor.constant';
 import { medications } from '../../constants/Medication.constant';
@@ -26,10 +27,7 @@ import {
 const Home = ({ navigation }: NavigationOptions): JSX.Element => {
   return (
     <ScrollView style={styles.container}>
-      <TextInput
-        style={styles.input}
-        placeholder="Search doctors, appointments,..."
-      />
+      <InputBase holder="Search doctors, appointments,..." icon={Search} />
       <View style={styles.flex}>
         <Text style={[styles.boldTitle, typography.smallTitle]}>
           Upcoming appointments
@@ -60,7 +58,7 @@ const Home = ({ navigation }: NavigationOptions): JSX.Element => {
         <Text style={[styles.boldTitle, typography.smallTitle]}>
           Find your doctor
         </Text>
-        <Text style={styles.viewAll}>View All</Text>
+        <Text onPress={() => navigation.navigate('doctors')} style={styles.viewAll}>View All</Text>
       </View>
       <View style={styles.flexCard}>
         {/* Doctors */}
@@ -81,13 +79,6 @@ const styles = StyleSheet.create({
     paddingBottom: 8,
     backgroundColor: theme.standardBackground,
     color: theme.black,
-  },
-  input: {
-    height: 40,
-    borderWidth: 1,
-    borderRadius: 10,
-    backgroundColor: theme.white,
-    marginVertical: 10,
   },
   flex: {
     display: 'flex',

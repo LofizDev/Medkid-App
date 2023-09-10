@@ -11,3 +11,17 @@ export type AppointmentCardItem = Omit<
   AppointmentsCalendarCard,
   'status' | 'doctorName'
 >;
+
+export type AppointmentOptionsDate = {
+  text: string;
+  day: string;
+};
+
+export type AppointmentOptionsTime = {
+  text: string;
+};
+
+export type AppointmentOptionProps = {
+  text?: string;
+  day?: string;
+};
