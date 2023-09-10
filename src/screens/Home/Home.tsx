@@ -46,7 +46,7 @@ const Home = ({ navigation }: NavigationOptions): JSX.Element => {
         <Text style={[styles.boldTitle, typography.smallTitle]}>
           Current medications
         </Text>
-        <Text style={styles.viewAll}>View All</Text>
+        <Text style={styles.viewAll}>View Al</Text>
       </View>
       {/* Medications */}
       <View style={styles.flexCard}>
