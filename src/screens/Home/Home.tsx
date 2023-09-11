@@ -46,12 +46,12 @@ const Home = ({ navigation }: NavigationOptions): JSX.Element => {
         <Text style={[styles.boldTitle, typography.smallTitle]}>
           Current medications
         </Text>
-        <Text style={styles.viewAll}>View All</Text>
+        <Text style={styles.viewAll} onPress={() => navigation.navigate('medications')}>View All</Text>
       </View>
       {/* Medications */}
       <View style={styles.flexCard}>
         {medications.map((medication: MedicationCard, idx: number) => (
-          <CardInfo key={idx} text={medication.medicationName} icon={<medication.icon />} />
+          <CardInfo onPress={() => navigation.navigate('medicationDetails', { medicationId: medication.id })} key={idx} text={medication.medicationName} icon={<medication.icon />} />
         ))}
       </View>
       <View style={styles.flex}>
